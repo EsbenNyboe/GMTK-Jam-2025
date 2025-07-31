@@ -28,6 +28,9 @@ func _process(delta: float) -> void:
 		var jumping_player_instance = JUMPING_PLAYER.instantiate()
 		jumping_player_instance.position = sitting_player.global_position
 		jumping_player_instance.rotation = sitting_player.global_rotation
+		jumping_player_instance.linear_velocity = swing_seat.linear_velocity
+		jumping_player_instance.angular_velocity = swing_seat.angular_velocity
+		
 		add_child(jumping_player_instance)
 		get_tree().queue_delete(sitting_player)
 		is_jumping = true

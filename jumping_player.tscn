@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b57cy7o2cnpma"]
+[gd_scene load_steps=5 format=3 uid="uid://b57cy7o2cnpma"]
 
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="1_j84u7"]
 
@@ -12,8 +12,13 @@ albedo_texture = ExtResource("1_j84u7")
 material = SubResource("StandardMaterial3D_gyfs4")
 size = Vector2(2, 2.65)
 
-[node name="JumpingPlayer" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_j84u7"]
+
+[node name="JumpingPlayer" type="RigidBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("QuadMesh_yemrc")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_j84u7")
