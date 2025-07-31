@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcaiyk3on427n"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o3jxj"]
+size = Vector3(100, 100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0f027"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o3jxj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0f027"]
+size = Vector3(100, 100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3jxj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="SwingJoint" type="PinJoint2D" parent="."]
+node_a = NodePath("../SwingMount")
+node_b = NodePath("../Player")
+
+[node name="SwingMount" type="RigidBody2D" parent="."]
+position = Vector2(0, -124)
+gravity_scale = 0.0
+freeze = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="SwingMount"]
+mesh = SubResource("BoxMesh_o3jxj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwingMount"]
+shape = SubResource("RectangleShape2D_0f027")
+
+[node name="Player" type="RigidBody2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Player"]
+material = SubResource("ShaderMaterial_o3jxj")
+mesh = SubResource("BoxMesh_0f027")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_o3jxj")
