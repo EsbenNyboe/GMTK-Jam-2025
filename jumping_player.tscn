@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b57cy7o2cnpma"]
+[gd_scene load_steps=6 format=3 uid="uid://b57cy7o2cnpma"]
 
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="1_j84u7"]
+[ext_resource type="Script" uid="uid://ddsaigj7abc8s" path="res://jumping_player.gd" id="1_yemrc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyfs4"]
 transparency = 2
@@ -15,6 +16,7 @@ size = Vector2(2, 2.65)
 [sub_resource type="BoxShape3D" id="BoxShape3D_j84u7"]
 
 [node name="JumpingPlayer" type="RigidBody3D"]
+script = ExtResource("1_yemrc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("QuadMesh_yemrc")
