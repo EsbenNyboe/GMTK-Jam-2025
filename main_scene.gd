@@ -6,6 +6,9 @@ extends Node3D
 @onready var swing_seat: RigidBody3D = $SwingSeat
 
 @export var burst_duration: float = 0.2;
+
+@export var jump_multiplier: float = 1.5
+
 const JUMPING_PLAYER = preload("res://jumping_player.tscn")
 
 var time_since_last_burst: float = 100000
@@ -31,8 +34,8 @@ func _process(delta: float) -> void:
 		jumping_player_instance = JUMPING_PLAYER.instantiate()
 		jumping_player_instance.position = sitting_player.global_position
 		jumping_player_instance.rotation = sitting_player.global_rotation
-		jumping_player_instance.linear_velocity = swing_seat.linear_velocity * 1.5
-		jumping_player_instance.angular_velocity = swing_mount.angular_velocity * 1.5
+		jumping_player_instance.linear_velocity = swing_seat.linear_velocity * jump_multiplier
+		jumping_player_instance.angular_velocity = swing_mount.angular_velocity
 		
 		add_child(jumping_player_instance)
 		get_tree().queue_delete(sitting_player)

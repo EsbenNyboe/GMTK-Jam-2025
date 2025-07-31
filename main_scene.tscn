@@ -56,6 +56,7 @@ size = Vector2(1000, 1)
 [node name="Main Scene" type="Node3D"]
 script = ExtResource("1_0f027")
 force_amount = 5.0
+jump_multiplier = 3.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2c62f")
