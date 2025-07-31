@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://8dpwrpr8cufa"]
+
+[ext_resource type="Script" uid="uid://ddlhh0s2y6wx6" path="res://no_joints_scene.gd" id="1_x36cn"]
+[ext_resource type="Script" uid="uid://ceay8cie57qrh" path="res://swing_mount.gd" id="2_x36cn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t3kpn"]
+size = Vector3(100, 100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x36cn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x36cn"]
+size = Vector3(100, 100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm0ju"]
+
+[node name="NoJointsScene" type="Node2D"]
+script = ExtResource("1_x36cn")
+torque_amount = 100000.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="SwingMount" type="RigidBody2D" parent="."]
+position = Vector2(0, -124)
+gravity_scale = 0.0
+script = ExtResource("2_x36cn")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="SwingMount"]
+mesh = SubResource("BoxMesh_t3kpn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwingMount"]
+shape = SubResource("RectangleShape2D_x36cn")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D"]
+mesh = SubResource("BoxMesh_x36cn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_mm0ju")

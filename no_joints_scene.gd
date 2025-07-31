@@ -1,12 +1,9 @@
 extends Node2D
 
-@onready var player: RigidBody2D = $Player
-@export var force: float = 1
 @onready var swing_mount: RigidBody2D = $SwingMount
-
+@export var torque_amount: float = 1
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("swing"):
-		print("Swing!")
-		 
-		player.apply_force(Vector2.UP * force)
+		print("torque!")
+		swing_mount.apply_torque(torque_amount * delta)
