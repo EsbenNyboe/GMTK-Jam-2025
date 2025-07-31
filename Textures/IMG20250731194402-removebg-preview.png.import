@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnm2egho50t1l"
-path.s3tc="res://.godot/imported/Baby.png-f319f41dda9cf8ffbebd820c087f2696.s3tc.ctex"
+uid="uid://b0imw3n7w0sdn"
+path.s3tc="res://.godot/imported/IMG20250731194402-removebg-preview.png-cfc5e2a01cfb12022bdce5c302e64439.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Baby.png"
-dest_files=["res://.godot/imported/Baby.png-f319f41dda9cf8ffbebd820c087f2696.s3tc.ctex"]
+source_file="res://Textures/IMG20250731194402-removebg-preview.png"
+dest_files=["res://.godot/imported/IMG20250731194402-removebg-preview.png-cfc5e2a01cfb12022bdce5c302e64439.s3tc.ctex"]
 
 [params]
 
