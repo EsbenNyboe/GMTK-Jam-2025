@@ -14,18 +14,21 @@ var start_height: float
 var is_above_start_height: bool
 var time_since_last_swing: float = 0
 @onready var sitting_player: Node3D = $SwingMount/SittingPlayer
+@onready var camera_controller: CameraController = $Camera3D
 
 var is_jumping: bool = false
+var jumping_player_instance: Node3D
 
 func _ready() -> void:
 	start_height = swing_seat.position.y + 0.1
 
 func _process(delta: float) -> void:
 	if is_jumping:
+		camera_controller.set_velocity(jumping_player_instance.linear_velocity)
 		return
 
 	if Input.is_action_just_pressed("jump"):
-		var jumping_player_instance = JUMPING_PLAYER.instantiate()
+		jumping_player_instance = JUMPING_PLAYER.instantiate()
 		jumping_player_instance.position = sitting_player.global_position
 		jumping_player_instance.rotation = sitting_player.global_rotation
 		jumping_player_instance.linear_velocity = swing_seat.linear_velocity * 1.5
