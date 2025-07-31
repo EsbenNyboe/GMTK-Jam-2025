@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=15 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="2_2c62f"]
@@ -31,6 +31,12 @@ albedo_texture = ExtResource("2_2c62f")
 material = SubResource("StandardMaterial3D_2c62f")
 size = Vector2(2, 2.65)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyfs4"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d5x1h"]
+material = SubResource("StandardMaterial3D_gyfs4")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5x1h"]
 transparency = 2
 alpha_scissor_threshold = 0.5
@@ -60,7 +66,7 @@ axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SwingMount"]
+[node name="BoxMesh" type="MeshInstance3D" parent="SwingMount"]
 visible = false
 mesh = SubResource("BoxMesh_o3jxj")
 
@@ -68,10 +74,20 @@ mesh = SubResource("BoxMesh_o3jxj")
 shape = SubResource("BoxShape3D_o3jxj")
 
 [node name="SittingPlayer" type="Node3D" parent="SwingMount"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.275437, -1.52645, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0912778, -1.52645, -0.0184699)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SwingMount/SittingPlayer"]
 mesh = SubResource("QuadMesh_d5x1h")
+
+[node name="Rope1" type="MeshInstance3D" parent="SwingMount"]
+transform = Transform3D(0.02, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.419526, -1.09614, 0)
+mesh = SubResource("PlaneMesh_d5x1h")
+skeleton = NodePath("../..")
+
+[node name="Rope2" type="MeshInstance3D" parent="SwingMount"]
+transform = Transform3D(0.02, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.444177, -1.07751, 0)
+mesh = SubResource("PlaneMesh_d5x1h")
+skeleton = NodePath("../..")
 
 [node name="SwingSeat" type="RigidBody3D" parent="."]
 
