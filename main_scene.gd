@@ -1,7 +1,7 @@
 extends Node3D
 
-@onready var rigid_body_3d: RigidBody3D = $RigidBody3D
 @export var torque_amount: float = 10
+@onready var swing_mount: RigidBody3D = $SwingMount
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,4 +14,4 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("swing"):
-		rigid_body_3d.apply_torque(Vector3.BACK * torque_amount)
+		swing_mount.apply_torque(Vector3.BACK * torque_amount)

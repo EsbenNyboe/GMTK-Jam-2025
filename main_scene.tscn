@@ -32,26 +32,32 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.34129)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="SwingMount" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41461, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SwingMount"]
 mesh = SubResource("BoxMesh_o3jxj")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingMount"]
 shape = SubResource("BoxShape3D_o3jxj")
 
-[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+[node name="SittingPlayer" type="Node3D" parent="SwingMount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01111, -1.52645, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SwingMount/SittingPlayer"]
 mesh = SubResource("BoxMesh_o3jxj")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+[node name="SwingSeat" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SwingSeat"]
+mesh = SubResource("BoxMesh_o3jxj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingSeat"]
 shape = SubResource("BoxShape3D_o3jxj")
 
 [node name="PinJoint3D" type="PinJoint3D" parent="."]
-node_a = NodePath("../RigidBody3D")
-node_b = NodePath("../RigidBody3D2")
+node_a = NodePath("../SwingMount")
+node_b = NodePath("../SwingSeat")
