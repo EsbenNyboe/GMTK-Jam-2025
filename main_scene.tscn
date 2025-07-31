@@ -61,9 +61,6 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04044, 3.34129)
 script = ExtResource("2_d5x1h")
-lerp_factor_start = 0.001
-lerp_factor_end = 1.0
-lerp_trajectory_duration = 2.0
 
 [node name="SwingMount" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41461, 0)
