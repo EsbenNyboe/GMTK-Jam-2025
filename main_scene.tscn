@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=18 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="2_2c62f"]
@@ -46,6 +46,12 @@ albedo_texture = ExtResource("3_gyfs4")
 
 [sub_resource type="QuadMesh" id="QuadMesh_8mm7a"]
 material = SubResource("StandardMaterial3D_d5x1h")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d5x1h"]
+size = Vector3(1000, 1, 1000)
+
+[sub_resource type="QuadMesh" id="QuadMesh_hq1ik"]
+size = Vector2(1000, 1)
 
 [node name="Main Scene" type="Node3D"]
 script = ExtResource("1_0f027")
@@ -105,5 +111,14 @@ node_a = NodePath("../SwingMount")
 node_b = NodePath("../SwingSeat")
 
 [node name="SandboxMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.29794e-07, -9.83255, 1.82236, 10, -4.37114e-07, 0, 7.96577e-08, 1.82236, 9.83255, -1.063, 0, -0.205)
+transform = Transform3D(-4.29794e-07, -9.83255, 1.82236, 10, -4.37114e-07, 1.06581e-13, 7.96578e-08, 1.82236, 9.83255, -1.063, 0, -0.205)
 mesh = SubResource("QuadMesh_8mm7a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5952, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_d5x1h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("QuadMesh_hq1ik")
