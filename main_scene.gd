@@ -6,16 +6,31 @@ extends Node3D
 @onready var swing_seat: RigidBody3D = $SwingSeat
 
 @export var burst_duration: float = 0.2;
+const JUMPING_PLAYER = preload("res://jumping_player.tscn")
 
 var time_since_last_burst: float = 100000
-
 
 var start_height: float
 var is_above_start_height: bool
 var time_since_last_swing: float = 0
+@onready var sitting_player: Node3D = $SwingMount/SittingPlayer
+
+var is_jumping: bool = false
 
 func _ready() -> void:
 	start_height = swing_seat.position.y + 0.1
+
+func _process(delta: float) -> void:
+	if is_jumping:
+		return
+
+	if Input.is_action_just_pressed("jump"):
+		var jumping_player_instance = JUMPING_PLAYER.instantiate()
+		jumping_player_instance.position = sitting_player.global_position
+		jumping_player_instance.rotation = sitting_player.global_rotation
+		add_child(jumping_player_instance)
+		get_tree().queue_delete(sitting_player)
+		is_jumping = true
 
 func _physics_process(delta: float) -> void:
 	time_since_last_burst += delta

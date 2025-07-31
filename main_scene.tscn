@@ -20,14 +20,14 @@ glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o3jxj"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyfs4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c62f"]
 transparency = 2
 alpha_scissor_threshold = 0.699
 alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("2_2c62f")
 
 [sub_resource type="QuadMesh" id="QuadMesh_d5x1h"]
-material = SubResource("StandardMaterial3D_gyfs4")
+material = SubResource("StandardMaterial3D_2c62f")
 size = Vector2(2, 2.65)
 
 [node name="Main Scene" type="Node3D"]
