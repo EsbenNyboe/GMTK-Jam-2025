@@ -28,7 +28,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("swing"):
 		swing_seat.apply_force(Vector3.RIGHT * force_amount)
 	
-	
 	time_since_last_swing += delta
 	if swing_seat.position.y > start_height:
 		is_above_start_height = true
