@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb6qd78l265b8"]
+
+[ext_resource type="Texture2D" uid="uid://bki7yjrmfkoa0" path="res://Textures/BG/bgHill04.png" id="1_b22pb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfk4m"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_b22pb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_66tet"]
+material = SubResource("StandardMaterial3D_nfk4m")
+
+[node name="SkyBackgroundElement" type="MeshInstance3D"]
+mesh = SubResource("QuadMesh_66tet")
