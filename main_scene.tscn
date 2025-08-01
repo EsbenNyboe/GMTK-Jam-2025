@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=22 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="2_2c62f"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://ds6lj78yruhrw" path="res://rope_controller.gd" id="3_8mm7a"]
 [ext_resource type="Texture2D" uid="uid://b1kxfihw7a8v5" path="res://Textures/IMG20250731195538-removebg-preview.png" id="3_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://cm002jyv5uvy6" path="res://floor_mesh.tscn" id="6_hq1ik"]
+[ext_resource type="Script" uid="uid://banf7hpgb0mlm" path="res://sky_bg_parallax.gd" id="7_66tet"]
+[ext_resource type="PackedScene" uid="uid://byiccrpygru72" path="res://sky_background_element.tscn" id="8_66tet"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3jxj"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -193,3 +195,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.6503, -7.85814, -2.12605)
 
 [node name="FloorMesh11" parent="." instance=ExtResource("6_hq1ik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.9046, -7.85814, -2.12605)
+
+[node name="SkyBackground" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.42216)
+script = ExtResource("7_66tet")
+ring_count = 10
+mesh_scale = 100.0
+
+[node name="SkyBackgroundElement" parent="SkyBackground" instance=ExtResource("8_66tet")]
+visible = false
