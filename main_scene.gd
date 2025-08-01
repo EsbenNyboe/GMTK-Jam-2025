@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 		start_screen.queue_free()
 	
 	if is_jumping:
-		camera_controller.set_velocity(jumping_player_instance.linear_velocity)
+		camera_controller.set_velocity(jumping_player_instance.linear_velocity, jumping_player_instance.global_position)
 		return
 
 	if Input.is_action_just_pressed("jump"):
