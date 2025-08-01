@@ -13,6 +13,8 @@
 
 [node name="root" type="Node3D"]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [node name="Hip" type="Sprite3D" parent="."]
 flip_v = true
 texture = ExtResource("1_vvh5c")
@@ -34,7 +36,7 @@ offset = Vector2(0.685, -11.515)
 texture = ExtResource("4_jnlp7")
 
 [node name="Hand_r" type="Sprite3D" parent="Hip/Body/Arm_r/LowArm_r"]
-transform = Transform3D(1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0, 0, 1, 0.00427851, -0.239832, 0)
+transform = Transform3D(0.998802, -0.0489021, 0, 0.0489021, 0.998802, 0, 0, 0, 1, -0.00886139, -0.250433, 0)
 offset = Vector2(0, -7.875)
 texture = ExtResource("5_l8v81")
 
@@ -47,58 +49,38 @@ transform = Transform3D(0.284752, -0.958601, 0, 0.958601, 0.284752, 0, 0, 0, 1, 
 remote_path = NodePath("../../Arm_r/LowArm_r")
 
 [node name="RemoteHand_r" type="RemoteTransform3D" parent="Hip/Body/RemoteArm_r/RemoteLowArm_r"]
-transform = Transform3D(1, -1.86265e-09, 0, 1.86265e-09, 1, 0, 0, 0, 1, 0.00427848, -0.239832, 0)
+transform = Transform3D(0.998803, -0.0489021, 0, 0.0489021, 0.998803, 0, 0, 0, 1, -0.00886142, -0.250433, 0)
 remote_path = NodePath("../../../Arm_r/LowArm_r/Hand_r")
 
 [node name="Arm_l" type="Sprite3D" parent="Hip/Body"]
-transform = Transform3D(0.994327, -0.106368, 0, 0.106368, 0.994327, 0, 0, 0, 1, 0.278179, 0.508827, 0)
+transform = Transform3D(-0.975378, -0.220544, 0, 0.220544, -0.975378, 0, 0, 0, 1, 0.54534, 0.313704, 0)
 offset = Vector2(15.515, -6.965)
 flip_v = true
 texture = ExtResource("3_jnlp7")
 
 [node name="LowArm_l" type="Sprite3D" parent="Hip/Body/Arm_l"]
-transform = Transform3D(-0.243886, -0.969804, 0, 0.969804, -0.243886, 0, 0, 0, 1, 0.314849, -0.185766, 0)
+transform = Transform3D(-0.782478, 0.622679, 0, -0.622679, -0.782478, 0, 0, 0, 1, -0.026848, 0.0237867, 0)
 offset = Vector2(-0.84, -12.03)
 flip_h = true
 texture = ExtResource("4_jnlp7")
 
 [node name="Hand_l" type="Sprite3D" parent="Hip/Body/Arm_l/LowArm_l"]
-transform = Transform3D(0.99505, 0.0993719, 0, -0.0993719, 0.99505, 0, 0, 0, 1, -0.00857918, -0.260292, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000444949, -0.301161, 0)
 offset = Vector2(0.58, -5.73)
 flip_h = true
 texture = ExtResource("5_l8v81")
 
-[node name="Leg_r" type="Sprite3D" parent="Hip/Body"]
-transform = Transform3D(0.625202, 0.780464, 0, -0.780464, 0.625202, 0, 0, 0, 1, -0.169945, -0.134843, 0)
-offset = Vector2(17.47, -9.7)
-texture = ExtResource("6_l8v81")
+[node name="RemoteArm_l" type="RemoteTransform3D" parent="Hip/Body"]
+transform = Transform3D(-0.975378, -0.220544, 0, 0.220544, -0.975378, 0, 0, 0, 1, 0.54534, 0.313704, 0)
+remote_path = NodePath("../Arm_l")
 
-[node name="LowLeg_r" type="Sprite3D" parent="Hip/Body/Leg_r"]
-transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.375865, -0.242608, 0)
-offset = Vector2(0.89, -14.165)
-texture = ExtResource("7_bf3um")
+[node name="RemoteLowArm_l" type="RemoteTransform3D" parent="Hip/Body/RemoteArm_l"]
+transform = Transform3D(-0.782478, 0.622679, 0, -0.622679, -0.782478, 0, 0, 0, 1, -0.026848, 0.0237866, 0)
+remote_path = NodePath("../../Arm_l/LowArm_l")
 
-[node name="Foot_r" type="Sprite3D" parent="Hip/Body/Leg_r/LowLeg_r"]
-transform = Transform3D(0.999992, 0.00396192, 0, -0.00396192, 0.999992, 0, 0, 0, 1, 0.00502455, -0.364063, 0)
-offset = Vector2(10.875, -3.025)
-flip_h = true
-texture = ExtResource("8_huihk")
-
-[node name="Leg_l" type="Sprite3D" parent="Hip/Body"]
-transform = Transform3D(0.990581, 0.136926, 0, -0.136926, 0.990581, 0, 0, 0, 1, 0.199829, -0.160814, 0)
-offset = Vector2(17.47, -9.7)
-texture = ExtResource("6_l8v81")
-
-[node name="LowLeg_l" type="Sprite3D" parent="Hip/Body/Leg_l"]
-transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.375865, -0.242608, 0)
-offset = Vector2(0.89, -14.165)
-texture = ExtResource("7_bf3um")
-
-[node name="Foot_l" type="Sprite3D" parent="Hip/Body/Leg_l/LowLeg_l"]
-transform = Transform3D(0.999992, 0.00396192, 0, -0.00396192, 0.999992, 0, 0, 0, 1, 0.00502455, -0.364063, 0)
-offset = Vector2(10.875, -3.025)
-flip_h = true
-texture = ExtResource("8_huihk")
+[node name="RemoteHand_l" type="RemoteTransform3D" parent="Hip/Body/RemoteArm_l/RemoteLowArm_l"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000444949, -0.301161, 0)
+remote_path = NodePath("../../../Arm_l/LowArm_l/Hand_l")
 
 [node name="Neck" type="Sprite3D" parent="Hip/Body"]
 transform = Transform3D(0.99983, -0.0185169, 0, 0.0185169, 0.99983, 0, 0, 0, 1, 0.034, 0.571, 0)
@@ -111,3 +93,59 @@ offset = Vector2(13.015, 40.55)
 flip_h = true
 flip_v = true
 texture = ExtResource("10_tw3kd")
+
+[node name="Leg_r" type="Sprite3D" parent="Hip"]
+transform = Transform3D(0.611182, 0.791491, 0, -0.791491, 0.611182, 0, 0, 0, 1, -0.201773, -0.0377509, 0)
+offset = Vector2(17.47, -9.7)
+texture = ExtResource("6_l8v81")
+
+[node name="LowLeg_r" type="Sprite3D" parent="Hip/Leg_r"]
+transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.375865, -0.242608, 0)
+offset = Vector2(0.89, -14.165)
+texture = ExtResource("7_bf3um")
+
+[node name="Foot_r" type="Sprite3D" parent="Hip/Leg_r/LowLeg_r"]
+transform = Transform3D(0.999992, 0.00396192, 0, -0.00396192, 0.999992, 0, 0, 0, 1, 0.00502454, -0.364063, 0)
+offset = Vector2(10.875, -3.025)
+flip_h = true
+texture = ExtResource("8_huihk")
+
+[node name="RemoteLeg_r" type="RemoteTransform3D" parent="Hip"]
+transform = Transform3D(0.611182, 0.791491, 0, -0.791491, 0.611182, 0, 0, 0, 1, -0.201773, -0.0377509, 0)
+remote_path = NodePath("../Leg_r")
+
+[node name="RemoteLowLeg_r" type="RemoteTransform3D" parent="Hip/RemoteLeg_r"]
+transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.375865, -0.242608, 0)
+remote_path = NodePath("../../Leg_r/LowLeg_r")
+
+[node name="RemoteFoot_r" type="RemoteTransform3D" parent="Hip/RemoteLeg_r/RemoteLowLeg_r"]
+transform = Transform3D(0.999992, 0.00396192, 0, -0.00396192, 0.999992, 0, 0, 0, 1, 0.00502454, -0.364063, 0)
+remote_path = NodePath("../../../Leg_r/LowLeg_r/Foot_r")
+
+[node name="Leg_l" type="Sprite3D" parent="Hip"]
+transform = Transform3D(0.987982, 0.154572, 0, -0.154572, 0.987982, 0, 0, 0, 1, 0.167479, -0.0703125, 0)
+offset = Vector2(17.47, -9.7)
+texture = ExtResource("6_l8v81")
+
+[node name="LowLeg_l" type="Sprite3D" parent="Hip/Leg_l"]
+transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.375865, -0.242608, 0)
+offset = Vector2(0.89, -14.165)
+texture = ExtResource("7_bf3um")
+
+[node name="Foot_l" type="Sprite3D" parent="Hip/Leg_l/LowLeg_l"]
+transform = Transform3D(0.999992, 0.00396183, 0, -0.00396183, 0.999992, 0, 0, 0, 1, 0.00502452, -0.364063, 0)
+offset = Vector2(10.875, -3.025)
+flip_h = true
+texture = ExtResource("8_huihk")
+
+[node name="RemoteLeg_l" type="RemoteTransform3D" parent="Hip"]
+transform = Transform3D(0.987982, 0.154572, 0, -0.154572, 0.987982, 0, 0, 0, 1, 0.167479, -0.0703125, 0)
+remote_path = NodePath("../Leg_l")
+
+[node name="RemoteLowLeg_l" type="RemoteTransform3D" parent="Hip/RemoteLeg_l"]
+transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.375865, -0.242608, 0)
+remote_path = NodePath("../../Leg_l/LowLeg_l")
+
+[node name="RemoteFoot_l" type="RemoteTransform3D" parent="Hip/RemoteLeg_l/RemoteLowLeg_l"]
+transform = Transform3D(0.999992, 0.00396189, 0, -0.00396189, 0.999992, 0, 0, 0, 1, 0.00502452, -0.364063, 0)
+remote_path = NodePath("../../../Leg_l/LowLeg_l/Foot_l")
