@@ -156,15 +156,3 @@ shape = SubResource("BoxShape3D_d5x1h")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0522256)
 mesh = SubResource("QuadMesh_hq1ik")
-
-[node name="Line2D" type="Line2D" parent="."]
-visible = false
-position = Vector2(47.2055, -24.755)
-scale = Vector2(3.09896, 2.10071)
-points = PackedVector2Array(0, 0, 1, 0)
-width = 22.49
-
-[node name="Line2D2" type="Line2D" parent="."]
-visible = false
-points = PackedVector2Array(0, 0, 1, 0)
-width = 22.49
