@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	basis.z = forward
 
 	# Apply transform
-	var thickness = 0.05
+	var thickness = 0.02
 	var mid_point = start + direction * 0.5
 	rope_visual.global_transform = Transform3D(basis, mid_point)
 	rope_visual.scale = Vector3(thickness, length, thickness)
