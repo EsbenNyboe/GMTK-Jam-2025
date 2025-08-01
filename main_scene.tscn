@@ -170,13 +170,13 @@ mesh = SubResource("QuadMesh_hq1ik")
 [node name="SkyBackground" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.42216)
 script = ExtResource("7_66tet")
-ring_count = 100
+ring_count = 20
 mesh_scale = 100.0
 mesh_distance = 50.0
 
 [node name="FloorBackground" type="Node3D" parent="."]
 script = ExtResource("9_7ycvg")
-ring_count = 100
+ring_count = 20
 mesh_scale = 15.0
 mesh_distance = 0.5
 floor_height = -9.5
@@ -188,7 +188,7 @@ mesh_scale = 50.0
 height = -28.0
 distance = 9.5
 spacing = 53.0
-repeats = 100
+repeats = 20
 offset = 5.5
 
 [node name="HillBackground2" type="Node3D" parent="."]
@@ -198,7 +198,7 @@ mesh_scale = 50.0
 height = -25.0
 distance = 11.0
 spacing = 45.0
-repeats = 100
+repeats = 20
 offset = 8.5
 
 [node name="HillBackground3" type="Node3D" parent="."]
@@ -208,7 +208,7 @@ mesh_scale = 40.0
 height = -22.0
 distance = 9.8
 spacing = 35.0
-repeats = 100
+repeats = 20
 offset = 12.0
 
 [node name="HillBackground4" type="Node3D" parent="."]
@@ -218,7 +218,7 @@ mesh_scale = 64.0
 height = -35.0
 distance = 9.7
 spacing = 40.0
-repeats = 100
+repeats = 20
 offset = 15.0
 
 [node name="CloudBackground1" type="Node3D" parent="."]
@@ -227,7 +227,7 @@ element_index = 1
 mesh_scale = 20.0
 height = 5.0
 distance = 22.0
-repeats = 100
+repeats = 20
 
 [node name="CloudBackground2" type="Node3D" parent="."]
 script = ExtResource("14_42l1d")
@@ -235,7 +235,7 @@ element_index = 2
 mesh_scale = 20.0
 height = 11.0
 distance = 35.0
-repeats = 100
+repeats = 20
 offset = 5.0
 
 [node name="CloudBackground3" type="Node3D" parent="."]
@@ -244,7 +244,7 @@ element_index = 3
 mesh_scale = 20.0
 height = 24.0
 distance = 33.0
-repeats = 100
+repeats = 20
 offset = 12.0
 
 [node name="CloudBackground4" type="Node3D" parent="."]
@@ -253,7 +253,7 @@ element_index = 4
 mesh_scale = 20.0
 height = 34.0
 distance = 44.0
-repeats = 100
+repeats = 20
 offset = 14.0
 
 [node name="CloudBackground5" type="Node3D" parent="."]
@@ -262,7 +262,7 @@ element_index = 5
 mesh_scale = 20.0
 height = 22.0
 distance = 48.0
-repeats = 100
+repeats = 20
 offset = 17.0
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
