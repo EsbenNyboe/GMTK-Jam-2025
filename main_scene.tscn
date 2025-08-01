@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=19 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="2_2c62f"]
 [ext_resource type="Script" uid="uid://bds4a85aygnu1" path="res://camera_controller.gd" id="2_d5x1h"]
+[ext_resource type="Script" uid="uid://ds6lj78yruhrw" path="res://rope_controller.gd" id="3_8mm7a"]
 [ext_resource type="Texture2D" uid="uid://b1kxfihw7a8v5" path="res://Textures/IMG20250731195538-removebg-preview.png" id="3_gyfs4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3jxj"]
@@ -18,6 +19,12 @@ sky = SubResource("Sky_0f027")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mm7a"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hq1ik"]
+material = SubResource("StandardMaterial3D_8mm7a")
+
 [sub_resource type="BoxMesh" id="BoxMesh_o3jxj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o3jxj"]
@@ -31,12 +38,6 @@ albedo_texture = ExtResource("2_2c62f")
 [sub_resource type="QuadMesh" id="QuadMesh_d5x1h"]
 material = SubResource("StandardMaterial3D_2c62f")
 size = Vector2(2, 2.65)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyfs4"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_d5x1h"]
-material = SubResource("StandardMaterial3D_gyfs4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5x1h"]
 transparency = 2
@@ -69,6 +70,28 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04044, 3.34129)
 script = ExtResource("2_d5x1h")
 
+[node name="RopeMount1" type="Node3D" parent="." node_paths=PackedStringArray("rope_visual", "rope_joint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.421351, 1.4782, 0)
+script = ExtResource("3_8mm7a")
+rope_visual = NodePath("Rope1")
+rope_joint = NodePath("../SwingMount/RopeJoint1")
+
+[node name="Rope1" type="MeshInstance3D" parent="RopeMount1"]
+transform = Transform3D(0.05, 0, 0, 0, 2, 0, 0, 0, 0.05, 0, -1.096, 0)
+mesh = SubResource("BoxMesh_hq1ik")
+skeleton = NodePath("../..")
+
+[node name="RopeMount2" type="Node3D" parent="." node_paths=PackedStringArray("rope_visual", "rope_joint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.444335, 2.39113, 0)
+script = ExtResource("3_8mm7a")
+rope_visual = NodePath("Rope2")
+rope_joint = NodePath("../SwingMount/RopeJoint2")
+
+[node name="Rope2" type="MeshInstance3D" parent="RopeMount2"]
+transform = Transform3D(0.05, 0, 0, 0, 2, 0, 0, 0, 0.05, 0, -1.096, 0)
+mesh = SubResource("BoxMesh_hq1ik")
+skeleton = NodePath("../..")
+
 [node name="SwingMount" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41461, 0)
 axis_lock_linear_x = true
@@ -88,15 +111,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0912778, -1.52645, -0.01846
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SwingMount/SittingPlayer"]
 mesh = SubResource("QuadMesh_d5x1h")
 
-[node name="Rope1" type="MeshInstance3D" parent="SwingMount"]
-transform = Transform3D(0.02, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.419526, -1.09614, 0)
-mesh = SubResource("PlaneMesh_d5x1h")
-skeleton = NodePath("../..")
+[node name="RopeJoint1" type="Node3D" parent="SwingMount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.421351, -2.28612, 0)
 
-[node name="Rope2" type="MeshInstance3D" parent="SwingMount"]
-transform = Transform3D(0.02, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.444177, -1.07751, 0)
-mesh = SubResource("PlaneMesh_d5x1h")
-skeleton = NodePath("../..")
+[node name="RopeJoint2" type="Node3D" parent="SwingMount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.444335, -1.65135, 0)
 
 [node name="SwingSeat" type="RigidBody3D" parent="."]
 
