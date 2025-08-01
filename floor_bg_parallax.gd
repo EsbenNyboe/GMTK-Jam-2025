@@ -1,7 +1,6 @@
 extends Node3D
 
 const FLOOR_BACKGROUND_ELEMENT = preload("res://floor_background_element.tscn")
-@onready var initial_mesh: MeshInstance3D = $SkyBackgroundElement
 @export var ring_count: int = 1
 
 @export var mesh_scale: float = 10
