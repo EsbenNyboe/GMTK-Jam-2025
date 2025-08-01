@@ -3,7 +3,7 @@ extends Node3D
 @export var torque_amount: float = 10
 @export var force_amount: float = 10
 @onready var swing_mount: RigidBody3D = $SwingMount
-@onready var swing_seat: RigidBody3D = $SwingSeat
+@onready var swing_seat: RigidBody3D = $SwingSeatJoint
 
 @export var burst_duration: float = 0.2;
 
@@ -16,7 +16,7 @@ var time_since_last_burst: float = 100000
 var start_height: float
 var is_above_start_height: bool
 var time_since_last_swing: float = 0
-@onready var sitting_player: Node3D = $SwingMount/SittingPlayer
+@onready var sitting_player: Node3D = $SwingMount/SwingSeat/SittingPlayer
 @onready var camera_controller: CameraController = $Camera3D
 
 var is_jumping: bool = false

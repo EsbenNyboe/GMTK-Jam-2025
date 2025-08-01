@@ -74,7 +74,7 @@ script = ExtResource("2_d5x1h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.478, 0)
 script = ExtResource("3_8mm7a")
 rope_visual = NodePath("Rope1")
-rope_joint = NodePath("../SwingMount/RopeJoint1")
+rope_joint = NodePath("../SwingMount/SwingSeat/RopeJoint1")
 
 [node name="Rope1" type="MeshInstance3D" parent="RopeMount1"]
 transform = Transform3D(0.05, 0, 0, 0, 0.485, 0, 0, 0, 0.05, 0, -0.341, 0)
@@ -85,7 +85,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 2.19027, 0)
 script = ExtResource("3_8mm7a")
 rope_visual = NodePath("Rope2")
-rope_joint = NodePath("../SwingMount/RopeJoint2")
+rope_joint = NodePath("../SwingMount/SwingSeat/RopeJoint2")
 
 [node name="Rope2" type="MeshInstance3D" parent="RopeMount2"]
 transform = Transform3D(0.05, 0, 0, 0, 0.415, 0, 0, 0, 0.05, 0, -0.496, 0)
@@ -105,46 +105,50 @@ mesh = SubResource("BoxMesh_o3jxj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SwingMount"]
 shape = SubResource("BoxShape3D_o3jxj")
 
-[node name="SittingPlayer" type="Node3D" parent="SwingMount"]
+[node name="SwingSeat" type="Node3D" parent="SwingMount"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0912778, -2.08292, -0.0184699)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SwingMount/SittingPlayer"]
+[node name="RopeJoint1" type="Node3D" parent="SwingMount/SwingSeat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.391278, 0.524211, 0.0184699)
+
+[node name="RopeJoint2" type="Node3D" parent="SwingMount/SwingSeat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.208722, 0.620065, 0.0184699)
+
+[node name="RopeBottom1" type="MeshInstance3D" parent="SwingMount/SwingSeat"]
+transform = Transform3D(0.02, 0, 0, 0, 0.635, 0, 0, 0, 0.02, -0.391278, 0.240718, 0.0184699)
+mesh = SubResource("BoxMesh_hq1ik")
+skeleton = NodePath("../..")
+
+[node name="RopeBottom2" type="MeshInstance3D" parent="SwingMount/SwingSeat"]
+transform = Transform3D(0.02, 0, 0, 0, 0.63, 0, 0, 0, 0.02, 0.208722, 0.299921, 0.0184699)
+mesh = SubResource("BoxMesh_hq1ik")
+skeleton = NodePath("../..")
+
+[node name="SittingPlayer" type="Node3D" parent="SwingMount/SwingSeat"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SwingMount/SwingSeat/SittingPlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6433, 0)
 mesh = SubResource("QuadMesh_d5x1h")
 
-[node name="RopeJoint1" type="Node3D" parent="SwingMount"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -1.55871, 0)
+[node name="SwingSeatJoint" type="RigidBody3D" parent="."]
 
-[node name="RopeJoint2" type="Node3D" parent="SwingMount"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -1.46286, 0)
-
-[node name="RopeBottom1" type="MeshInstance3D" parent="SwingMount"]
-transform = Transform3D(0.02, 0, 0, 0, 0.635, 0, 0, 0, 0.02, -0.3, -1.8422, 0)
-mesh = SubResource("BoxMesh_hq1ik")
-
-[node name="RopeBottom2" type="MeshInstance3D" parent="SwingMount"]
-transform = Transform3D(0.02, 0, 0, 0, 0.63, 0, 0, 0, 0.02, 0.3, -1.783, 0)
-mesh = SubResource("BoxMesh_hq1ik")
-
-[node name="SwingSeat" type="RigidBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SwingSeat"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SwingSeatJoint"]
 visible = false
 mesh = SubResource("BoxMesh_o3jxj")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingSeat"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingSeatJoint"]
 shape = SubResource("BoxShape3D_o3jxj")
 
 [node name="PinJoint3D" type="PinJoint3D" parent="."]
 node_a = NodePath("../SwingMount")
-node_b = NodePath("../SwingSeat")
+node_b = NodePath("../SwingSeatJoint")
 
 [node name="SandboxMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-07, -10, 0, 10, -4.37114e-07, 0, 0, 0, 10, -1.063, 0, -0.0219465)
+transform = Transform3D(-4.37114e-07, -10, 0, 10, -4.37114e-07, 0, 0, 0, 10, -1.063, 0, -0.199351)
 mesh = SubResource("QuadMesh_8mm7a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5952, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5952, -0.396854)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_d5x1h")
