@@ -79,8 +79,10 @@ func _physics_process(delta: float) -> void:
 			time_since_last_swing = 0
 		is_above_start_height = false
 
-func finish_game(score: float) -> void:
+func set_score(score: float) -> void:
+	jump_length = score
+
+func finish_game() -> void:
 	var tween = create_tween()
 	tween.tween_interval(1)
 	tween.tween_callback(add_child.bind(END_SCREEN.instantiate()))
-	jump_length = score
