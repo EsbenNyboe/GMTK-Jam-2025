@@ -1,4 +1,8 @@
+class_name MainScene
+
 extends Node3D
+
+static var instance
 
 @export var torque_amount: float = 10
 @export var force_amount: float = 10
@@ -19,12 +23,16 @@ var time_since_last_swing: float = 0
 @onready var sitting_player: Node3D = $SwingMount/SwingSeat/SittingPlayer
 @onready var camera_controller: CameraController = $Camera3D
 const START_SCREEN = preload("res://start_screen.tscn")
+const END_SCREEN = preload("res://end_screen.tscn")
 
 var is_jumping: bool = false
 var jumping_player_instance: Node3D
 var start_screen : Node
 
+var jump_length: float
+
 func _ready() -> void:
+	instance = self
 	start_height = swing_seat.position.y + 0.1
 	
 	start_screen = START_SCREEN.instantiate()
@@ -70,3 +78,9 @@ func _physics_process(delta: float) -> void:
 			print(time_since_last_swing)
 			time_since_last_swing = 0
 		is_above_start_height = false
+
+func finish_game(score: float) -> void:
+	var tween = create_tween()
+	tween.tween_interval(1)
+	tween.tween_callback(add_child.bind(END_SCREEN.instantiate()))
+	jump_length = score
