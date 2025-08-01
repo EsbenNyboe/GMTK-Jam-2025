@@ -69,8 +69,8 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04044, 3.34129)
 script = ExtResource("2_d5x1h")
-lerp_factor_start = 0.05
-lerp_timer_duration = 5.0
+lerp_factor_start = 0.001
+lerp_factor_end = 0.001
 
 [node name="RopeMount1" type="Node3D" parent="." node_paths=PackedStringArray("rope_visual", "rope_joint")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.478, 0)
