@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm002jyv5uvy6"]
+
+[ext_resource type="Texture2D" uid="uid://ctw4wy5ipghio" path="res://Textures/BG/bgGrassLoop01.png" id="1_16hnw"]
+
+[node name="FloorMesh" type="Sprite3D"]
+texture = ExtResource("1_16hnw")
