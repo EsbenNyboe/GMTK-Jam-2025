@@ -9,6 +9,7 @@
 script = ExtResource("1_yemrc")
 
 [node name="Fly_AnimatedSprite3D" parent="." instance=ExtResource("2_ocrcd")]
+transform = Transform3D(0.211376, -0.977405, 0, 0.977405, 0.211376, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_yemrc")
