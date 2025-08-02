@@ -1,6 +1,7 @@
 extends Node
 
 @onready var wee_audio: AudioStreamPlayer = $Wee_Audio
+@onready var woosh_audio: AudioStreamPlayer = $Woosh_Audio
 
 @onready var swing_seat_joint: RigidBody3D = $"../SwingSeatJoint"
 @export var top_point: float = 3.0
@@ -28,6 +29,8 @@ func _process(delta: float) -> void:
 		print("yo")
 	
 	if below_bottom_point:
+		if !has_passed_bottom_point && has_passed_top_point:
+			woosh_audio.play()
 		has_passed_top_point = false
 		has_passed_bottom_point = true
 	

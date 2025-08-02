@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=28 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="2_2c62f"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://b8mufxodf6cb0" path="res://floor_bg_parallax.gd" id="9_7ycvg"]
 [ext_resource type="Script" uid="uid://b6l1aheeeouep" path="res://swing_sounds.gd" id="11_mo76n"]
 [ext_resource type="AudioStream" uid="uid://d8ok6fgt3isb" path="res://Audio/audio_wee.tres" id="12_mo76n"]
+[ext_resource type="AudioStream" uid="uid://67eibyowv3ol" path="res://Audio/audio_woosh.tres" id="13_mo76n"]
 [ext_resource type="Script" uid="uid://d4bobav78w1wr" path="res://cloud_bg_parallax.gd" id="14_42l1d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3jxj"]
@@ -350,5 +351,8 @@ script = ExtResource("11_mo76n")
 
 [node name="Wee_Audio" type="AudioStreamPlayer" parent="SwingSounds"]
 stream = ExtResource("12_mo76n")
+
+[node name="Woosh_Audio" type="AudioStreamPlayer" parent="SwingSounds"]
+stream = ExtResource("13_mo76n")
 
 [editable path="SwingMount/SwingSeat/SittingPlayer/Hip"]
