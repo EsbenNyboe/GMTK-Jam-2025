@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=3 format=3 uid="uid://cc0o3e5px52j1"]
+
+[ext_resource type="AudioStream" uid="uid://cnuhonnw4ffdo" path="res://Audio/Player/SFXWeeLong01 [2025-08-02 155532].wav" id="1_246i8"]
+[ext_resource type="AudioStream" uid="uid://dgdfckfbkt85" path="res://Audio/Player/SFXWeeLong02 [2025-08-02 155535].wav" id="2_penxj"]
+
+[resource]
+streams_count = 2
+stream_0/stream = ExtResource("1_246i8")
+stream_1/stream = ExtResource("2_penxj")

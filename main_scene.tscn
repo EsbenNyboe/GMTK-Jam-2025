@@ -154,9 +154,6 @@ transform = Transform3D(0.975284, 0.220953, 0, -0.220953, 0.975284, 0, 0, 0, 1, 
 [node name="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_r" index="1"]
 transform = Transform3D(0.585315, 0.675459, 0.448511, -0.806343, 0.542888, 0.2347, -0.0849607, -0.499027, 0.862412, 0.129239, 0.0744854, 0.0237045)
 
-[node name="Arm_r" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_r" index="2"]
-transform = Transform3D(1, -1.19209e-07, 0, 1.19209e-07, 1, 0, 0, 0, 1, 0.331376, 0.184353, 0)
-
 [node name="Arm_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body" index="1"]
 transform = Transform3D(-0.942631, 0.333841, 0, -0.333841, -0.942631, 0, 0, 0, 1, 0.251444, 0.519103, 0)
 
@@ -165,9 +162,6 @@ transform = Transform3D(0.999987, -0.00509658, 0, 0.00509658, 0.999987, 0, 0, 0,
 
 [node name="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_l" index="1"]
 transform = Transform3D(-0.301422, 0.941845, -0.148571, -0.833275, -0.33594, -0.439085, -0.463461, -0.00854975, 0.886076, -0.190554, 0.0586775, -0.0169145)
-
-[node name="Arm_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_l" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343753, 0.142466, 0)
 
 [node name="Head" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Neck" index="0"]
 transform = Transform3D(0.999827, 0.0185168, 0, -0.0185168, 0.999827, 0, 0, 0, 1, 0.0208526, 0.123791, 0)

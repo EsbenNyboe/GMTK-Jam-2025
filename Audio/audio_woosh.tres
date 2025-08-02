@@ -1,0 +1,33 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=15 format=3 uid="uid://67eibyowv3ol"]
+
+[ext_resource type="AudioStream" uid="uid://ckicq8qusisf6" path="res://Audio/SFX/SFXWoosh01 [2025-08-02 162759].wav" id="1_gwm03"]
+[ext_resource type="AudioStream" uid="uid://bd8f5uoeg3e62" path="res://Audio/SFX/SFXWoosh02 [2025-08-02 162800].wav" id="2_t4dql"]
+[ext_resource type="AudioStream" uid="uid://d0r3utv0bc2ql" path="res://Audio/SFX/SFXWoosh10 [2025-08-02 162808].wav" id="3_isw0u"]
+[ext_resource type="AudioStream" uid="uid://obfupffws1vw" path="res://Audio/SFX/SFXWoosh11 [2025-08-02 162809].wav" id="4_gqx4m"]
+[ext_resource type="AudioStream" uid="uid://k1mwxk3x7h6h" path="res://Audio/SFX/SFXWoosh12 [2025-08-02 162810].wav" id="5_s802n"]
+[ext_resource type="AudioStream" uid="uid://docra4l70lv0f" path="res://Audio/SFX/SFXWoosh13 [2025-08-02 162811].wav" id="6_plyjb"]
+[ext_resource type="AudioStream" uid="uid://bolci44kvsroi" path="res://Audio/SFX/SFXWoosh03 [2025-08-02 162801].wav" id="7_wm7mp"]
+[ext_resource type="AudioStream" uid="uid://d3xvxs67s2shq" path="res://Audio/SFX/SFXWoosh04 [2025-08-02 162802].wav" id="8_tfl3o"]
+[ext_resource type="AudioStream" uid="uid://bd4ly7rv2ofoa" path="res://Audio/SFX/SFXWoosh05 [2025-08-02 162803].wav" id="9_lvgly"]
+[ext_resource type="AudioStream" uid="uid://dhuucl7amv2ia" path="res://Audio/SFX/SFXWoosh06 [2025-08-02 162804].wav" id="10_bcc70"]
+[ext_resource type="AudioStream" uid="uid://oro72gyfc0w1" path="res://Audio/SFX/SFXWoosh07 [2025-08-02 162805].wav" id="11_67g8j"]
+[ext_resource type="AudioStream" uid="uid://dporh10wchohj" path="res://Audio/SFX/SFXWoosh08 [2025-08-02 162805].wav" id="12_0iiar"]
+[ext_resource type="AudioStream" uid="uid://ryvwlq1jm0oi" path="res://Audio/SFX/SFXWoosh09 [2025-08-02 162806].wav" id="13_mr5mr"]
+[ext_resource type="AudioStream" uid="uid://tlt2m0xfx500" path="res://Audio/SFX/SFXWoosh09 [2025-08-02 162807].wav" id="14_0lbko"]
+
+[resource]
+streams_count = 14
+stream_0/stream = ExtResource("1_gwm03")
+stream_1/stream = ExtResource("2_t4dql")
+stream_2/stream = ExtResource("7_wm7mp")
+stream_3/stream = ExtResource("8_tfl3o")
+stream_4/stream = ExtResource("9_lvgly")
+stream_5/stream = ExtResource("10_bcc70")
+stream_6/stream = ExtResource("11_67g8j")
+stream_7/stream = ExtResource("12_0iiar")
+stream_8/stream = ExtResource("13_mr5mr")
+stream_9/stream = ExtResource("14_0lbko")
+stream_10/stream = ExtResource("3_isw0u")
+stream_11/stream = ExtResource("4_gqx4m")
+stream_12/stream = ExtResource("5_s802n")
+stream_13/stream = ExtResource("6_plyjb")

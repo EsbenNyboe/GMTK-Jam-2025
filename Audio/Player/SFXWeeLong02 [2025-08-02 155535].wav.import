@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dgdfckfbkt85"
+path="res://.godot/imported/SFXWeeLong02 [2025-08-02 155535].wav-722bc2eb1bf538e6b3e4881af8c1e9b3.sample"
+
+[deps]
+
+source_file="res://Audio/Player/SFXWeeLong02 [2025-08-02 155535].wav"
+dest_files=["res://.godot/imported/SFXWeeLong02 [2025-08-02 155535].wav-722bc2eb1bf538e6b3e4881af8c1e9b3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
