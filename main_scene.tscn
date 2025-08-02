@@ -56,7 +56,7 @@ albedo_texture = ExtResource("3_gyfs4")
 material = SubResource("StandardMaterial3D_d5x1h")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5x1h"]
-size = Vector3(10000, 1, 10000)
+size = Vector3(10000, 10, 10000)
 
 [sub_resource type="QuadMesh" id="QuadMesh_hq1ik"]
 size = Vector2(1000, 1)
@@ -102,7 +102,7 @@ mesh = SubResource("BoxMesh_hq1ik")
 skeleton = NodePath("../..")
 
 [node name="SwingMount" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41461, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89351, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true
@@ -232,6 +232,7 @@ mesh = SubResource("QuadMesh_8mm7a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5952, -0.396854)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 0)
 shape = SubResource("BoxShape3D_d5x1h")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
