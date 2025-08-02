@@ -252,3 +252,80 @@ shape = SubResource("CapsuleShape3D_sq7yr")
 [node name="Hip" type="Sprite3D" parent="Node3D/Hip"]
 flip_v = true
 texture = ExtResource("1_vvh5c")
+
+[node name="Joints" type="Node3D" parent="Node3D"]
+
+[node name="Body" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0803243, 0)
+node_a = NodePath("../../Hip")
+node_b = NodePath("../../Hip/Body")
+
+[node name="Arm_r" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31756, 0.626106, 0)
+node_a = NodePath("../../Hip/Body")
+node_b = NodePath("../../Hip/Body/Arm_r")
+
+[node name="LowArm_r" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.546934, 0.329409, 0)
+node_a = NodePath("../../Hip/Body/Arm_r")
+node_b = NodePath("../../Hip/Body/Arm_r/LowArm_r")
+
+[node name="Hand_r" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.735651, 0.300267, 0)
+node_a = NodePath("../../Hip/Body/Arm_r/LowArm_r")
+node_b = NodePath("../../Hip/Body/Arm_r/LowArm_r/Hand_r")
+
+[node name="Arm_l" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.282275, 0.612661, 0)
+node_a = NodePath("../../Hip/Body")
+node_b = NodePath("../../Hip/Body/Arm_l")
+
+[node name="LowArm_l" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.507821, 0.394399, 0)
+node_a = NodePath("../../Hip/Body/Arm_l")
+node_b = NodePath("../../Hip/Body/Arm_l/LowArm_l")
+
+[node name="Hand_l" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.660475, 0.153632, 0)
+node_a = NodePath("../../Hip/Body/Arm_l/LowArm_l")
+node_b = NodePath("../../Hip/Body/Arm_l/LowArm_l/Hand_l")
+
+[node name="Neck" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653463, 0)
+node_a = NodePath("../../Hip/Body")
+node_b = NodePath("../../Hip/Body/Neck")
+
+[node name="Head" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.674967, 0)
+node_a = NodePath("../../Hip/Body")
+node_b = NodePath("../../Hip/Body/Head")
+
+[node name="Leg_r" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.205155, -0.127451, 0)
+node_a = NodePath("../../Hip")
+node_b = NodePath("../../Hip/Leg_r")
+
+[node name="LowLeg_r" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.156244, -0.4678, 0)
+node_a = NodePath("../../Hip/Leg_r")
+node_b = NodePath("../../Hip/Leg_r/LowLeg_r")
+
+[node name="Foot_r" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328962, -0.790507, 0)
+node_a = NodePath("../../Hip/Leg_r/LowLeg_r")
+node_b = NodePath("../../Hip/Leg_r/LowLeg_r/Foot_r")
+
+[node name="Leg_l" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178793, -0.0996172, 0)
+node_a = NodePath("../../Hip")
+node_b = NodePath("../../Hip/Leg_l")
+
+[node name="LowLeg_l" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.491212, -0.366799, 0)
+node_a = NodePath("../../Hip/Leg_l")
+node_b = NodePath("../../Hip/Leg_l/LowLeg_l")
+
+[node name="Foot_l" type="PinJoint3D" parent="Node3D/Joints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.608525, -0.65111, 0)
+node_a = NodePath("../../Hip/Leg_l/LowLeg_l")
+node_b = NodePath("../../Hip/Leg_l/LowLeg_l/Foot_l")
