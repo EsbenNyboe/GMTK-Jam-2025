@@ -362,20 +362,27 @@ script = ExtResource("11_mo76n")
 
 [node name="Wee_Audio" type="AudioStreamPlayer" parent="SwingSounds"]
 stream = ExtResource("12_mo76n")
+volume_db = -9.654
+bus = &"Player"
 
 [node name="Woosh_Audio" type="AudioStreamPlayer" parent="SwingSounds"]
 stream = ExtResource("13_mo76n")
+volume_db = -14.92
+bus = &"SFX"
 
 [node name="JumpSounds" type="Node" parent="."]
 script = ExtResource("14_m35m6")
 
 [node name="Yell_Audio" type="AudioStreamPlayer" parent="JumpSounds"]
 stream = ExtResource("14_2jcla")
+bus = &"Player"
 
 [node name="Grunt_Audio" type="AudioStreamPlayer" parent="JumpSounds"]
 stream = ExtResource("16_m35m6")
+bus = &"Player"
 
 [node name="Impact_Audio" type="AudioStreamPlayer" parent="JumpSounds"]
 stream = ExtResource("18_6jybn")
+bus = &"SFX"
 
 [editable path="SwingMount/SwingSeat/SittingPlayer/Hip"]

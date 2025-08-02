@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw3iiq1dctjxi"]
+
+[ext_resource type="AudioStream" uid="uid://80odk4i7hmct" path="res://Audio/Music/SwingMusicLoop.mp3" id="1_bp55o"]
+[ext_resource type="AudioStream" uid="uid://c6tyiwsngo25x" path="res://Audio/Atmos/City_Amb_Loop.wav" id="2_juysr"]
+
+[node name="BgMusicPlayer" type="Node"]
+
+[node name="bgMusicPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("1_bp55o")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="AtmosPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = ExtResource("2_juysr")
+autoplay = true
+bus = &"Atmos"
