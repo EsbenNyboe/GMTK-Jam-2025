@@ -1,9 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://drob45nvt01gq"]
+[gd_scene load_steps=3 format=3 uid="uid://drob45nvt01gq"]
 
 [ext_resource type="SpriteFrames" uid="uid://bkh0tu8twcydg" path="res://Textures/CharAnimation/swing_sprite_frames.tres" id="1_mg5ug"]
 
+[sub_resource type="GDScript" id="GDScript_mg5ug"]
+script/source = "extends AnimatedSprite3D
+
+func _ready() -> void:
+	stop()
+
+func _process(delta: float) -> void:
+	if Input.is_action_pressed(\"swing\") && frame != 4:
+		play()
+	
+	if Input.is_action_pressed(\"swing\") && frame == 4:
+		pause()
+	elif !Input.is_action_pressed(\"swing\") && frame == 4:
+		play()
+"
+
 [node name="Swing_AnimatedSprite3D" type="AnimatedSprite3D"]
 sprite_frames = ExtResource("1_mg5ug")
-autoplay = "default"
-frame = 8
-frame_progress = 0.0832301
+script = SubResource("GDScript_mg5ug")
