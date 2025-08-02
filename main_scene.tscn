@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=33 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="2_2c62f"]
@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://d4bobav78w1wr" path="res://cloud_bg_parallax.gd" id="14_42l1d"]
 [ext_resource type="Script" uid="uid://dte6sohf07q8u" path="res://jump_sounds.gd" id="14_m35m6"]
 [ext_resource type="AudioStream" uid="uid://btnx2b16tqvj4" path="res://Audio/audio_grunts.tres" id="16_m35m6"]
+[ext_resource type="SpriteFrames" uid="uid://dx3wmle7eihb8" path="res://Textures/CharAnimation/fly_sprite_frames.tres" id="17_u0ygc"]
+[ext_resource type="SpriteFrames" uid="uid://bkh0tu8twcydg" path="res://Textures/CharAnimation/swing_sprite_frames.tres" id="18_7th4q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3jxj"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -366,5 +368,18 @@ stream = ExtResource("14_2jcla")
 
 [node name="Grunt_Audio" type="AudioStreamPlayer" parent="JumpSounds"]
 stream = ExtResource("16_m35m6")
+
+[node name="Fly_AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59175, 0, 0)
+visible = false
+sprite_frames = ExtResource("17_u0ygc")
+autoplay = "default"
+frame_progress = 0.76179
+
+[node name="Swing_AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59175, 0, 0)
+visible = false
+sprite_frames = ExtResource("18_7th4q")
+autoplay = "default"
 
 [editable path="SwingMount/SwingSeat/SittingPlayer/Hip"]
