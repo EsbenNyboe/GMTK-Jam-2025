@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c24mqek3lb11o"]
+
+[ext_resource type="SpriteFrames" uid="uid://dx3wmle7eihb8" path="res://Textures/CharAnimation/fly_sprite_frames.tres" id="1_tpw8f"]
+
+[node name="Fly_AnimatedSprite3D" type="AnimatedSprite3D"]
+sprite_frames = ExtResource("1_tpw8f")
+autoplay = "default"
+frame_progress = 0.606525

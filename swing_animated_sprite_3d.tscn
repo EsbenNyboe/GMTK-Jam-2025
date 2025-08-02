@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://drob45nvt01gq"]
+
+[ext_resource type="SpriteFrames" uid="uid://bkh0tu8twcydg" path="res://Textures/CharAnimation/swing_sprite_frames.tres" id="1_mg5ug"]
+
+[node name="Swing_AnimatedSprite3D" type="AnimatedSprite3D"]
+sprite_frames = ExtResource("1_mg5ug")
+autoplay = "default"

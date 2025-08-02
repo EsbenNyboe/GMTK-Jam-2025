@@ -13,7 +13,7 @@ static var instance
 
 @export var jump_multiplier: float = 1.5
 
-const JUMPING_PLAYER = preload("res://player_3d.tscn")
+const JUMPING_PLAYER = preload("res://jumping_player.tscn")
 
 var time_since_last_burst: float = 100000
 
