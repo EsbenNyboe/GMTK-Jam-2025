@@ -3,6 +3,7 @@ extends AudioStreamPlayer
 @onready var swing_seat_joint: RigidBody3D = $"../SwingSeatJoint"
 @export var top_point: float = 3.0
 @export var bottom_point: float = 0.5
+@export var max_velocity: float = 20
 
 var has_passed_top_point: bool = false
 var has_passed_bottom_point: bool = false
@@ -18,8 +19,8 @@ func _process(delta: float) -> void:
 	if above_top_point && on_left_side && has_passed_bottom_point && !has_passed_top_point:
 		has_passed_top_point = true
 		has_passed_bottom_point = false
-		var clamped_velocity = clampf(MainScene.instance.swing_mount.angular_velocity.z, 0, 20)	
-		var pitch = remap(MainScene.instance.swing_mount.angular_velocity.z, 0, 20, 1, 2)
+		var clamped_velocity = clampf(MainScene.instance.swing_mount.angular_velocity.z, 0, max_velocity)	
+		var pitch = remap(clamped_velocity, 0, max_velocity, 1, 2)
 		pitch_scale = pitch
 		play(0.78)
 	
