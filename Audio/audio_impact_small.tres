@@ -1,0 +1,15 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://1c7yt7myk6ub"]
+
+[ext_resource type="AudioStream" uid="uid://dyj6ext7a05j4" path="res://Audio/SFX/SFXImpactSmall01 [2025-08-02 180444].wav" id="1_yihq6"]
+[ext_resource type="AudioStream" uid="uid://bxdjedyvjwo4u" path="res://Audio/SFX/SFXImpactSmall02 [2025-08-02 180445].wav" id="2_t50ja"]
+[ext_resource type="AudioStream" uid="uid://d4bk56typpug5" path="res://Audio/SFX/SFXImpactSmall03 [2025-08-02 180447].wav" id="3_cjteq"]
+[ext_resource type="AudioStream" uid="uid://c3cr10oc8da8d" path="res://Audio/SFX/SFXImpactSmall04 [2025-08-02 180448].wav" id="4_6rd43"]
+[ext_resource type="AudioStream" uid="uid://yyuncyduuiw3" path="res://Audio/SFX/SFXImpactSmall05 [2025-08-02 180449].wav" id="5_g1ww3"]
+
+[resource]
+streams_count = 5
+stream_0/stream = ExtResource("1_yihq6")
+stream_1/stream = ExtResource("2_t50ja")
+stream_2/stream = ExtResource("3_cjteq")
+stream_3/stream = ExtResource("4_6rd43")
+stream_4/stream = ExtResource("5_g1ww3")

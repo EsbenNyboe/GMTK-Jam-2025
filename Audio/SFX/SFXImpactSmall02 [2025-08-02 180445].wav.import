@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxdjedyvjwo4u"
+path="res://.godot/imported/SFXImpactSmall02 [2025-08-02 180445].wav-00c35ad22c88e89ecd1ceb06dab0051b.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/SFXImpactSmall02 [2025-08-02 180445].wav"
+dest_files=["res://.godot/imported/SFXImpactSmall02 [2025-08-02 180445].wav-00c35ad22c88e89ecd1ceb06dab0051b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

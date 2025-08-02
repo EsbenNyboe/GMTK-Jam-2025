@@ -2,6 +2,7 @@ extends Node
 
 @onready var yell_audio: AudioStreamPlayer = $Yell_Audio
 @onready var grunt_audio: AudioStreamPlayer = $Grunt_Audio
+@onready var impact_audio: AudioStreamPlayer = $Impact_Audio
 
 var has_jumped: bool = false
 var has_landed: bool = false
@@ -15,3 +16,4 @@ func _process(delta: float) -> void:
 		has_landed = true
 		yell_audio.stop()
 		grunt_audio.play()
+		impact_audio.play()

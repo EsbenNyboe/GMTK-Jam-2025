@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4tstkg6tok78"
+path="res://.godot/imported/SFXImpactSplat03 [2025-08-02 175609].wav-ed0606a0b5adcb447b171c981e1e104e.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/SFXImpactSplat03 [2025-08-02 175609].wav"
+dest_files=["res://.godot/imported/SFXImpactSplat03 [2025-08-02 175609].wav-ed0606a0b5adcb447b171c981e1e104e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
