@@ -52,7 +52,6 @@ flip_v = true
 [node name="Arm_l" type="Sprite2D" parent="root/Skeleton2D/Hip/Body"]
 position = Vector2(-41.0113, 0.268566)
 rotation = 2.07321
-scale = Vector2(1, 1)
 texture = ExtResource("4_jakrd")
 offset = Vector2(15.515, -6.965)
 flip_v = true
@@ -60,7 +59,6 @@ flip_v = true
 [node name="LowArm_l" type="Sprite2D" parent="root/Skeleton2D/Hip/Body/Arm_l"]
 position = Vector2(47.2176, -16.2327)
 rotation = -2.46943
-scale = Vector2(1, 1)
 texture = ExtResource("5_0p3br")
 offset = Vector2(-0.84, -12.03)
 flip_h = true
@@ -68,7 +66,6 @@ flip_h = true
 [node name="Hand_l" type="Sprite2D" parent="root/Skeleton2D/Hip/Body/Arm_l/LowArm_l"]
 position = Vector2(1.32028, 14.8073)
 rotation = -0.0651886
-scale = Vector2(1, 1)
 texture = ExtResource("6_8srmb")
 offset = Vector2(0.58, -5.73)
 flip_h = true
@@ -76,7 +73,6 @@ flip_h = true
 [node name="Leg_r" type="Sprite2D" parent="root/Skeleton2D/Hip"]
 position = Vector2(17, 23)
 rotation = 0.228339
-scale = Vector2(1, 1)
 texture = ExtResource("9_1o7d4")
 offset = Vector2(17.47, -9.7)
 
@@ -89,7 +85,6 @@ offset = Vector2(0.89, -14.165)
 [node name="Foot_r" type="Sprite2D" parent="root/Skeleton2D/Hip/Leg_r/LowLeg_r"]
 position = Vector2(0.852608, 11.6307)
 rotation = -0.00396199
-scale = Vector2(1, 1)
 texture = ExtResource("11_5o15j")
 offset = Vector2(10.875, -3.025)
 flip_h = true
@@ -116,19 +111,16 @@ flip_h = true
 [node name="Arm_rBone2D" type="Bone2D" parent="root/Skeleton2D"]
 position = Vector2(26, -66)
 rotation = -2.6638
-scale = Vector2(1, 1)
 rest = Transform2D(-0.877639, -0.479324, 0.479324, -0.877639, 26, -66)
 
 [node name="Arm_r" type="Sprite2D" parent="root/Skeleton2D/Arm_rBone2D"]
 position = Vector2(-0.877657, 0.479332)
-scale = Vector2(1, 1)
 texture = ExtResource("4_jakrd")
 offset = Vector2(-14.655, 8.345)
 
 [node name="LowArm_rBone2D" type="Bone2D" parent="root/Skeleton2D/Arm_rBone2D"]
 position = Vector2(-35.1055, 19.1729)
 rotation = 1.11013
-scale = Vector2(1, 1)
 rest = Transform2D(0.444546, 0.895756, -0.895756, 0.444546, -35.1055, 19.1729)
 
 [node name="LowArm_r" type="Sprite2D" parent="root/Skeleton2D/Arm_rBone2D/LowArm_rBone2D"]
@@ -145,7 +137,6 @@ rest = Transform2D(-0.0460219, 0.998939, -0.998939, -0.0460219, -0.212434, 23.12
 [node name="Hand_r" type="Sprite2D" parent="root/Skeleton2D/Arm_rBone2D/LowArm_rBone2D/Hand_rBone2D"]
 position = Vector2(1.39397, 0.0582428)
 rotation = -1.5419
-scale = Vector2(1, 1)
 texture = ExtResource("6_8srmb")
 offset = Vector2(0, 7.8)
 
