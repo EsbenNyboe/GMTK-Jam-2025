@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=28 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="2_2c62f"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://ci5hxnt6lexmq" path="res://hill_bg_parallax.gd" id="8_66tet"]
 [ext_resource type="Script" uid="uid://b8mufxodf6cb0" path="res://floor_bg_parallax.gd" id="9_7ycvg"]
 [ext_resource type="PackedScene" uid="uid://ccsuqmk2sqjdw" path="res://cloud_1.tscn" id="10_wr18j"]
+[ext_resource type="PackedScene" uid="uid://4nufg1p5te8r" path="res://root.tscn" id="12_671wp"]
 [ext_resource type="Script" uid="uid://d4bobav78w1wr" path="res://cloud_bg_parallax.gd" id="14_42l1d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3jxj"]
@@ -78,7 +79,7 @@ transform = Transform3D(0.919299, 0.340834, -0.196779, 0, 0.499998, 0.866027, 0.
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04044, 3.34129)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04, 4.661)
 script = ExtResource("2_d5x1h")
 lerp_factor_start = 0.001
 lerp_factor_end = 0.001
@@ -296,3 +297,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8769, 3.30769, 0)
 shape = SubResource("BoxShape3D_qwutr")
 
 [node name="Cloud1" parent="StaticBody3D4" instance=ExtResource("10_wr18j")]
+
+[node name="root" parent="." instance=ExtResource("12_671wp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.61826, 1.00229, 0)
