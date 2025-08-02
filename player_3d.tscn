@@ -53,31 +53,32 @@ radius = 0.0996708
 height = 0.570546
 
 [node name="Hip" type="RigidBody3D"]
+transform = Transform3D(0.996666, -0.0815906, 0, 0.0815906, 0.996666, 0, 0, 0, 1, 0, 0, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 script = ExtResource("1_de0v8")
 
 [node name="Body" type="RigidBody3D" parent="."]
-transform = Transform3D(0.999841, 0.0178363, 0, -0.0178363, 0.999841, 0, 0, 0, 1, -0.0294495, 0.0940399, 0)
+transform = Transform3D(0.993544, 0.113446, 0, -0.113446, 0.993544, 0, 0, 0, 1, -0.041, 0.038, -1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Arm_r" type="RigidBody3D" parent="Body"]
-transform = Transform3D(-0.891158, 0.453695, 0, -0.453695, -0.891158, 0, 0, 0, 1, -0.273565, 0.54919, 0)
+transform = Transform3D(-0.891158, 0.453695, 0, -0.453695, -0.891158, 0, 0, 0, 1, -0.274, 0.549, 1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="LowArm_r" type="RigidBody3D" parent="Body/Arm_r"]
-transform = Transform3D(0.284752, -0.958601, 0, 0.958601, 0.284752, 0, 0, 0, 1, 0.331376, 0.184353, 0)
+transform = Transform3D(0.284752, -0.958601, 0, 0.958601, 0.284752, 0, 0, 0, 1, 0.331, 0.184, 1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Hand_r" type="RigidBody3D" parent="Body/Arm_r/LowArm_r"]
-transform = Transform3D(0.998803, -0.0489021, 0, 0.0489021, 0.998803, 0, 0, 0, 1, -0.00886145, -0.250433, 0)
+transform = Transform3D(0.998803, -0.0489021, 0, 0.0489021, 0.998803, 0, 0, 0, 1, -0.00437444, -0.227424, -1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -87,7 +88,7 @@ transform = Transform3D(0.877567, 0.0812187, 0.472525, -0.0895862, 0.995967, -0.
 shape = SubResource("CapsuleShape3D_tw3kd")
 
 [node name="Hand_r" type="Sprite3D" parent="Body/Arm_r/LowArm_r/Hand_r"]
-transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 5.96046e-08, 0, 0)
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.00572401, -0.022323, 0)
 offset = Vector2(0, -7.875)
 texture = ExtResource("2_j6l77")
 
@@ -110,19 +111,19 @@ offset = Vector2(-15.395, -9.51)
 texture = ExtResource("4_3dh3c")
 
 [node name="Arm_l" type="RigidBody3D" parent="Body"]
-transform = Transform3D(-0.975378, -0.220544, 0, 0.220544, -0.975378, 0, 0, 0, 1, 0.251444, 0.519103, 0)
+transform = Transform3D(-0.975378, -0.220544, 0, 0.220544, -0.975378, 0, 0, 0, 1, 0.233276, 0.519353, 1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="LowArm_l" type="RigidBody3D" parent="Body/Arm_l"]
-transform = Transform3D(-0.782478, 0.622679, 0, -0.622679, -0.782478, 0, 0, 0, 1, -0.370601, 0.166252, 0)
+transform = Transform3D(-0.782478, 0.622679, 0, -0.622679, -0.782478, 0, 0, 0, 1, -0.371, 0.166, 1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Hand_l" type="RigidBody3D" parent="Body/Arm_l/LowArm_l"]
-transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0.000445008, -0.301161, 0)
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.00275224, -0.232011, -1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -132,7 +133,7 @@ transform = Transform3D(0.877567, 0.0812187, 0.472525, -0.0895861, 0.995967, -0.
 shape = SubResource("CapsuleShape3D_tw3kd")
 
 [node name="Hand_l" type="Sprite3D" parent="Body/Arm_l/LowArm_l/Hand_l"]
-transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -5.96046e-08, 2.98023e-08, 0)
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0.00131565, -0.0444042, 0)
 offset = Vector2(0.58, -5.73)
 flip_h = true
 texture = ExtResource("2_j6l77")
@@ -158,7 +159,7 @@ flip_v = true
 texture = ExtResource("4_3dh3c")
 
 [node name="Neck" type="RigidBody3D" parent="Body"]
-transform = Transform3D(0.99983, -0.0185169, 0, 0.0185169, 0.99983, 0, 0, 0, 1, 0.034, 0.571, 0)
+transform = Transform3D(0.99983, -0.0185169, 0, 0.0185169, 0.99983, 0, 0, 0, 1, 0.0348479, 0.613536, -1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -168,12 +169,12 @@ transform = Transform3D(0.974015, 0.141046, 0.177202, -0.14633, 0.989089, 0.0170
 shape = SubResource("CapsuleShape3D_eji0w")
 
 [node name="Neck" type="Sprite3D" parent="Body/Neck"]
-transform = Transform3D(1, -1.92085e-09, 0, 1.92085e-09, 1, 0, 0, 0, 1, -3.72529e-09, -5.96046e-08, 0)
+transform = Transform3D(1, -3.72529e-09, 0, 3.72529e-09, 1, 0, 0, 0, 1, -0.00170358, -0.0442848, 0)
 offset = Vector2(0, 5.43)
 texture = ExtResource("5_s2obm")
 
 [node name="Head" type="RigidBody3D" parent="Body/Neck"]
-transform = Transform3D(0.999827, 0.0185168, 0, -0.0185168, 0.999827, 0, 0, 0, 1, 0.0208526, 0.123791, 0)
+transform = Transform3D(0.999827, 0.0185168, 0, -0.0185168, 0.999827, 0, 0, 0, 1, -0.0123164, 0.0419033, 1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -183,7 +184,7 @@ transform = Transform3D(0.974015, 0.141046, 0.177202, -0.14633, 0.989089, 0.0170
 shape = SubResource("CapsuleShape3D_qwhpj")
 
 [node name="Head" type="Sprite3D" parent="Body/Neck/Head"]
-transform = Transform3D(1, -1.86265e-09, 0, 1.86265e-09, 1, 0, 0, 0, 1, -7.45058e-09, 0, 0)
+transform = Transform3D(1, -1.86265e-09, 0, 1.86265e-09, 1, 0, 0, 0, 1, 0.0219748, 0.0350229, 0)
 offset = Vector2(13.015, 40.55)
 flip_h = true
 flip_v = true
@@ -194,24 +195,25 @@ transform = Transform3D(1, -1.86265e-09, 0, 1.86265e-09, 1, 0, 0, 0, 1, -0.00545
 shape = SubResource("CapsuleShape3D_qt76e")
 
 [node name="Body" type="Sprite3D" parent="Body"]
+transform = Transform3D(0.999446, -0.0332773, 0, 0.0332773, 0.999446, 0, 0, 0, 1, 3.16203e-05, -0.00177242, 0)
 offset = Vector2(0, 31.21)
 flip_v = true
 texture = ExtResource("7_yk5um")
 
 [node name="Leg_r" type="RigidBody3D" parent="."]
-transform = Transform3D(0.611182, 0.791491, 0, -0.791491, 0.611182, 0, 0, 0, 1, -0.201773, -0.0377509, 0)
+transform = Transform3D(0.611182, 0.791491, 0, -0.791491, 0.611182, 0, 0, 0, 1, -0.212624, -0.166894, 1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="LowLeg_r" type="RigidBody3D" parent="Leg_r"]
-transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.375865, -0.242608, 0)
+transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.376, -0.243, -1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Foot_r" type="RigidBody3D" parent="Leg_r/LowLeg_r"]
-transform = Transform3D(0.999992, 0.00396195, 0, -0.00396195, 0.999992, 0, 0, 0, 1, 0.00502452, -0.364063, 0)
+transform = Transform3D(0.999992, 0.00396195, 0, -0.00396195, 0.999992, 0, 0, 0, 1, -0.0119279, -0.336434, 1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -221,7 +223,7 @@ transform = Transform3D(0.0212392, -0.999774, 0, 0.999774, 0.0212392, 0, 0, 0, 1
 shape = SubResource("CapsuleShape3D_r3r3k")
 
 [node name="Foot_r" type="Sprite3D" parent="Leg_r/LowLeg_r/Foot_r"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, -1.19209e-07, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00234845, -0.031624, 0)
 offset = Vector2(10.875, -3.025)
 flip_h = true
 texture = ExtResource("8_mcytg")
@@ -245,19 +247,19 @@ offset = Vector2(17.47, -9.7)
 texture = ExtResource("10_d2kcw")
 
 [node name="Leg_l" type="RigidBody3D" parent="."]
-transform = Transform3D(0.987982, 0.154572, 0, -0.154572, 0.987982, 0, 0, 0, 1, 0.167479, -0.0703125, 0)
+transform = Transform3D(0.987982, 0.154572, 0, -0.154572, 0.987982, 0, 0, 0, 1, 0.157309, -0.188375, 1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="LowLeg_l" type="RigidBody3D" parent="Leg_l"]
-transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.375865, -0.242608, 0)
+transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.376, -0.243, -1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Foot_l" type="RigidBody3D" parent="Leg_l/LowLeg_l"]
-transform = Transform3D(0.999992, 0.00396189, 0, -0.00396189, 0.999992, 0, 0, 0, 1, 0.00502458, -0.364063, 0)
+transform = Transform3D(0.999992, 0.00396195, 0, -0.00396195, 0.999992, 0, 0, 0, 1, -0.00413051, -0.333787, 1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -267,7 +269,7 @@ transform = Transform3D(0.0212392, -0.999774, 0, 0.999774, 0.0212392, 0, 0, 0, 1
 shape = SubResource("CapsuleShape3D_r3r3k")
 
 [node name="Foot_l" type="Sprite3D" parent="Leg_l/LowLeg_l/Foot_l"]
-transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, -0.000819802, -0.0414898, 0)
 offset = Vector2(10.875, -3.025)
 flip_h = true
 texture = ExtResource("8_mcytg")
@@ -277,7 +279,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000605419, -0.129337, 0.01
 shape = SubResource("CapsuleShape3D_blcw0")
 
 [node name="LowLeg_l" type="Sprite3D" parent="Leg_l/LowLeg_l"]
-transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, -0.0038709, -0.00990683, 0)
 offset = Vector2(0.89, -14.165)
 texture = ExtResource("9_lcis0")
 
@@ -295,6 +297,7 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 
 shape = SubResource("CapsuleShape3D_sq7yr")
 
 [node name="Hip" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00882279, -0.107774, 0)
 flip_v = true
 texture = ExtResource("11_s2aq0")
 
