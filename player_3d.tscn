@@ -121,8 +121,8 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
 angular_limit/enable = true
-angular_limit/upper = 0.195477
-angular_limit/lower = -2.3719
+angular_limit/upper = 0.204204
+angular_limit/lower = -1.05418
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Arm_r"]
 transform = Transform3D(0.485039, 0.874493, 0, -0.874493, 0.485039, 0, 0, 0, 1, 0.129239, 0.0744855, 0)
@@ -140,8 +140,8 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
 angular_limit/enable = true
-angular_limit/upper = 1.94255
-angular_limit/lower = -0.0418879
+angular_limit/upper = 1.38928
+angular_limit/lower = 0.202458
 
 [node name="Arm_l" type="RigidBody3D" parent="Body"]
 transform = Transform3D(-0.878417, 0.477895, 0, -0.477895, -0.878417, 0, 0, 0, 1, 0.233, 0.519, 0)
@@ -197,7 +197,7 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
 angular_limit/enable = true
-angular_limit/upper = 1.75929
+angular_limit/upper = 0.839503
 angular_limit/lower = -0.410152
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Arm_l"]
@@ -217,8 +217,8 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
 angular_limit/enable = true
-angular_limit/upper = 2.59007
-angular_limit/lower = 0.764454
+angular_limit/upper = 2.39808
+angular_limit/lower = 1.22348
 
 [node name="Neck" type="RigidBody3D" parent="Body"]
 transform = Transform3D(0.99983, -0.0185169, 0, 0.0185169, 0.99983, 0, 0, 0, 1, 0.0142481, 0.616015, 0)
@@ -250,8 +250,8 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
 angular_limit/enable = true
-angular_limit/upper = 0.872665
-angular_limit/lower = -0.349066
+angular_limit/upper = 0.0872665
+angular_limit/lower = -0.0872665
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Neck"]
 transform = Transform3D(0.974015, 0.141046, 0.177202, -0.14633, 0.989089, 0.017047, -0.172864, -0.042534, 0.984027, -0.0275734, 0.101994, 0)
@@ -268,7 +268,7 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
 angular_limit/enable = true
-angular_limit/upper = 0.506145
+angular_limit/upper = 0.872665
 angular_limit/lower = -0.349066
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
@@ -344,8 +344,8 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
 angular_limit/enable = true
-angular_limit/upper = 0.502655
-angular_limit/lower = -1.57429
+angular_limit/upper = 0.471239
+angular_limit/lower = -1.08385
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Leg_r"]
 transform = Transform3D(0.540461, -0.837302, -0.0826311, 0.837257, 0.544918, -0.0454563, 0.0830878, -0.0446161, 0.995543, 0.190291, -0.115843, 0)
@@ -363,8 +363,8 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
 angular_limit/enable = true
-angular_limit/upper = 1.63712
-angular_limit/lower = -1.1205
+angular_limit/upper = 0.954695
+angular_limit/lower = -0.446804
 
 [node name="Leg_l" type="RigidBody3D" parent="."]
 transform = Transform3D(0.538875, 0.842387, 0, -0.842387, 0.538875, 0, 0, 0, 1, 0.157, -0.188, 0)
@@ -419,8 +419,8 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
 angular_limit/enable = true
-angular_limit/upper = 0.593412
-angular_limit/lower = -1.32994
+angular_limit/upper = 0.50091
+angular_limit/lower = -0.747001
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Leg_l"]
 transform = Transform3D(0.515322, -0.856996, 0, 0.856996, 0.515322, 0, 0, 0, 1, 0.19182, -0.109935, 0)
@@ -438,8 +438,8 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
 angular_limit/enable = true
-angular_limit/upper = 0.10472
-angular_limit/lower = -2.00364
+angular_limit/upper = 0.202458
+angular_limit/lower = -1.25315
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.0674406, -0.997724, 0, 0.997724, 0.0674406, 0, 0, 0, 1, -0.0295492, -0.102116, 0)

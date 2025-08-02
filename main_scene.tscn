@@ -66,7 +66,7 @@ size = Vector2(1000, 1)
 [node name="Main Scene" type="Node3D"]
 script = ExtResource("1_0f027")
 force_amount = 5.0
-jump_multiplier = 100.0
+jump_multiplier = 50.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2c62f")
@@ -169,28 +169,8 @@ transform = Transform3D(-0.301422, 0.941845, -0.148571, -0.833275, -0.33594, -0.
 [node name="Arm_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_l" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343753, 0.142466, 0)
 
-[node name="Head" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Neck" index="2"]
+[node name="Head" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Neck" index="0"]
 transform = Transform3D(0.999827, 0.0185168, 0, -0.0185168, 0.999827, 0, 0, 0, 1, 0.0208526, 0.123791, 0)
-
-[node name="LowArm_r" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Joints" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.675833, 0.612978, 0)
-
-[node name="Hand_r" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Joints" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.551926, 0.76363, 0)
-
-[node name="LowArm_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Joints" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6305, 0.580759, 0)
-
-[node name="Hand_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Joints" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.541131, 0.780622, 0)
-
-[node name="Head" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Joints" index="8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.773191, 0)
-
-[node name="Foot_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Joints" index="14"]
-angular_limit/enable = true
-angular_limit/upper = 0.881391
-angular_limit/lower = -0.804597
 
 [node name="SeatStaticBody" type="StaticBody3D" parent="SwingMount/SwingSeat/SittingPlayer"]
 
