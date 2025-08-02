@@ -5,4 +5,5 @@
 [node name="Fly_AnimatedSprite3D" type="AnimatedSprite3D"]
 sprite_frames = ExtResource("1_tpw8f")
 autoplay = "default"
-frame_progress = 0.606525
+frame = 21
+frame_progress = 0.505946

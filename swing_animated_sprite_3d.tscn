@@ -5,3 +5,5 @@
 [node name="Swing_AnimatedSprite3D" type="AnimatedSprite3D"]
 sprite_frames = ExtResource("1_mg5ug")
 autoplay = "default"
+frame = 8
+frame_progress = 0.0832301
