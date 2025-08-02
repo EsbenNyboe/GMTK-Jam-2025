@@ -9,11 +9,11 @@ static var instance
 @onready var swing_mount: RigidBody3D = $SwingMount
 @onready var swing_seat: RigidBody3D = $SwingSeatJoint
 
-@export var burst_duration: float = 0.2;
+@export var burst_duration: float = 0.2
 
 @export var jump_multiplier: float = 1.5
 
-const JUMPING_PLAYER = preload("res://jumping_player.tscn")
+const JUMPING_PLAYER = preload("res://player_3d.tscn")
 
 var time_since_last_burst: float = 100000
 

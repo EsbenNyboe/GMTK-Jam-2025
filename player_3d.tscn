@@ -1,0 +1,451 @@
+[gd_scene load_steps=23 format=3 uid="uid://bqve3xt2er15"]
+
+[ext_resource type="Script" uid="uid://ddsaigj7abc8s" path="res://jumping_player.gd" id="1_de0v8"]
+[ext_resource type="Texture2D" uid="uid://b751slsrbwboa" path="res://Textures/Character/CHarHand.png" id="2_j6l77"]
+[ext_resource type="Texture2D" uid="uid://cu7vk7gvxunv6" path="res://Textures/Character/CharLowerArm.png" id="3_q6nvt"]
+[ext_resource type="Texture2D" uid="uid://csdjfy8igcqjm" path="res://Textures/Character/CharArm.png" id="4_3dh3c"]
+[ext_resource type="Texture2D" uid="uid://ccxfrpt2suf0l" path="res://Textures/Character/CharNeck.png" id="5_s2obm"]
+[ext_resource type="Texture2D" uid="uid://d1vt31req0vcx" path="res://Textures/Character/CharHead.png" id="6_hadp7"]
+[ext_resource type="Texture2D" uid="uid://dj0p8mixmdg1x" path="res://Textures/Character/CharBody.png" id="7_yk5um"]
+[ext_resource type="Texture2D" uid="uid://c6aopgjfk0njb" path="res://Textures/Character/CharFoot.png" id="8_mcytg"]
+[ext_resource type="Texture2D" uid="uid://cm2oxc5y8itic" path="res://Textures/Character/CharLowerLeg.png" id="9_lcis0"]
+[ext_resource type="Texture2D" uid="uid://bbnpioqgsidmp" path="res://Textures/Character/CharLeg.png" id="10_d2kcw"]
+[ext_resource type="Texture2D" uid="uid://m8ntd2eobwm6" path="res://Textures/Character/CharHip.png" id="11_s2aq0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tw3kd"]
+radius = 0.0988591
+height = 0.225698
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gd4vy"]
+radius = 0.0563775
+height = 0.26341
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qw60f"]
+radius = 0.0760811
+height = 0.379934
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qwhpj"]
+radius = 0.253149
+height = 0.506298
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eji0w"]
+radius = 0.0752552
+height = 0.156533
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_de0v8"]
+radius = 0.268315
+height = 0.648252
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r3r3k"]
+radius = 0.103219
+height = 0.396475
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_blcw0"]
+radius = 0.065454
+height = 0.345504
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_50g4q"]
+radius = 0.0881477
+height = 0.347616
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qt76e"]
+radius = 0.0838057
+height = 0.341737
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sq7yr"]
+radius = 0.116946
+height = 0.540271
+
+[node name="Hip" type="RigidBody3D"]
+transform = Transform3D(0.996666, -0.0815906, 0, 0.0815906, 0.996666, 0, 0, 0, 1, 0, 0, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+script = ExtResource("1_de0v8")
+
+[node name="Body" type="RigidBody3D" parent="."]
+transform = Transform3D(0.993544, 0.113446, 0, -0.113446, 0.993544, 0, 0, 0, 1, -0.041, 0.038, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="Arm_r" type="RigidBody3D" parent="Body"]
+transform = Transform3D(-0.901017, -0.433786, 0, 0.433786, -0.901017, 0, 0, 0, 1, -0.274, 0.549, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="LowArm_r" type="RigidBody3D" parent="Body/Arm_r"]
+transform = Transform3D(-0.438637, -0.898664, 0, 0.898664, -0.438637, 0, 0, 0, 1, 0.331, 0.184, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="Hand_r" type="RigidBody3D" parent="Body/Arm_r/LowArm_r"]
+transform = Transform3D(0.998803, -0.0489021, 0, 0.0489021, 0.998803, 0, 0, 0, 1, -0.004, -0.227, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Arm_r/LowArm_r/Hand_r"]
+transform = Transform3D(1, 3.72529e-09, 0, -3.72529e-09, 1, 0, 0, 0, 1, -0.00247777, -0.11107, 0)
+shape = SubResource("CapsuleShape3D_tw3kd")
+
+[node name="Hand_r" type="Sprite3D" parent="Body/Arm_r/LowArm_r/Hand_r"]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.00572401, -0.022323, 0)
+offset = Vector2(0, -7.875)
+texture = ExtResource("2_j6l77")
+
+[node name="Joint_Hand_r" type="HingeJoint3D" parent="Body/Arm_r/LowArm_r/Hand_r"]
+transform = Transform3D(0.117121, -0.993117, 0, 0.993117, 0.117121, 0, 0, 0, 1, -0.00530335, 0.0115895, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.261799
+angular_limit/lower = -1.11527
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Arm_r/LowArm_r"]
+transform = Transform3D(0.99905, -0.043567, -3.8052e-09, 0.0435671, 0.99905, -1.84345e-10, 3.80962e-09, 1.83879e-11, 1, 0.000506341, -0.0910037, 0)
+shape = SubResource("CapsuleShape3D_gd4vy")
+
+[node name="LowArm_r" type="Sprite3D" parent="Body/Arm_r/LowArm_r"]
+transform = Transform3D(1, -4.47035e-08, 0, 4.47035e-08, 1, 0, 0, 0, 1, 5.96046e-08, -2.98023e-08, 0)
+offset = Vector2(0.685, -11.515)
+render_priority = 1
+texture = ExtResource("3_q6nvt")
+
+[node name="Joint_LowArm_r" type="HingeJoint3D" parent="Body/Arm_r/LowArm_r"]
+transform = Transform3D(0.0684148, -0.997656, 0, 0.997656, 0.0684148, 0, 0, 0, 1, -0.0115906, 0.0226013, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.204204
+angular_limit/lower = -1.05418
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Arm_r"]
+transform = Transform3D(0.485039, 0.874493, 0, -0.874493, 0.485039, 0, 0, 0, 1, 0.129239, 0.0744855, 0)
+shape = SubResource("CapsuleShape3D_qw60f")
+
+[node name="Arm_r" type="Sprite3D" parent="Body/Arm_r"]
+transform = Transform3D(1, -1.19209e-07, 0, 1.19209e-07, 1, 0, 0, 0, 1, 0.331376, 0.184353, 0)
+offset = Vector2(-15.395, -9.51)
+render_priority = 2
+texture = ExtResource("4_3dh3c")
+
+[node name="Joint_Arm_r" type="HingeJoint3D" parent="Body/Arm_r"]
+transform = Transform3D(-0.936873, -0.349667, 0, 0.349667, -0.936873, 0, 0, 0, 1, -0.0202681, 0.00278395, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 1.38928
+angular_limit/lower = 0.202458
+
+[node name="Arm_l" type="RigidBody3D" parent="Body"]
+transform = Transform3D(-0.878417, 0.477895, 0, -0.477895, -0.878417, 0, 0, 0, 1, 0.233, 0.519, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="LowArm_l" type="RigidBody3D" parent="Body/Arm_l"]
+transform = Transform3D(-0.408378, 0.912813, 0, -0.912813, -0.408378, 0, 0, 0, 1, -0.371, 0.166, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="Hand_l" type="RigidBody3D" parent="Body/Arm_l/LowArm_l"]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.003, -0.232, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Arm_l/LowArm_l/Hand_l"]
+transform = Transform3D(0.877567, 0.0812187, 0.472525, -0.0895861, 0.995967, -0.00481121, -0.47101, -0.0381094, 0.881304, 0.001, -0.11, 0)
+shape = SubResource("CapsuleShape3D_tw3kd")
+
+[node name="Hand_l" type="Sprite3D" parent="Body/Arm_l/LowArm_l/Hand_l"]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0.00131565, -0.0444042, 0)
+offset = Vector2(0.58, -5.73)
+flip_h = true
+texture = ExtResource("2_j6l77")
+
+[node name="Joint_Hand_l" type="HingeJoint3D" parent="Body/Arm_l/LowArm_l/Hand_l"]
+transform = Transform3D(0.944047, 0.329806, 0, -0.329806, 0.944047, 0, 0, 0, 1, 0.00413764, 0.0146104, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.90059
+angular_limit/lower = -0.13439
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Arm_l/LowArm_l"]
+transform = Transform3D(0.879212, 0.0608826, 0.472525, -0.0716639, 0.997417, 0.00483, -0.47101, -0.0381094, 0.881304, 0.011824, -0.0926156, 0)
+shape = SubResource("CapsuleShape3D_gd4vy")
+
+[node name="LowArm_l" type="Sprite3D" parent="Body/Arm_l/LowArm_l"]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -5.96046e-08, 2.98023e-08, 0)
+offset = Vector2(-0.84, -12.03)
+flip_h = true
+render_priority = 1
+texture = ExtResource("3_q6nvt")
+
+[node name="Joint_LowArm_l" type="HingeJoint3D" parent="Body/Arm_l/LowArm_l"]
+transform = Transform3D(0.944047, 0.329806, 0, -0.329806, 0.944047, 0, 0, 0, 1, 0.00951624, 0.0413855, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.839503
+angular_limit/lower = -0.410152
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Arm_l"]
+transform = Transform3D(-0.392095, 0.898712, -0.196414, -0.794647, -0.438456, -0.41987, -0.463461, -0.00854972, 0.886076, -0.165744, 0.0461918, 0)
+shape = SubResource("CapsuleShape3D_qw60f")
+
+[node name="Arm_l" type="Sprite3D" parent="Body/Arm_l"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343753, 0.142466, 0)
+offset = Vector2(15.515, -6.965)
+flip_v = true
+render_priority = 2
+texture = ExtResource("4_3dh3c")
+
+[node name="Joint_Arm_l" type="HingeJoint3D" parent="Body/Arm_l"]
+transform = Transform3D(-0.94406, 0.329772, 0, -0.329772, -0.94406, 0, 0, 0, 1, -0.0109478, -0.0111873, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 2.39808
+angular_limit/lower = 1.22348
+
+[node name="Neck" type="RigidBody3D" parent="Body"]
+transform = Transform3D(0.99983, -0.0185169, 0, 0.0185169, 0.99983, 0, 0, 0, 1, 0.0142481, 0.616015, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="Head" type="RigidBody3D" parent="Body/Neck"]
+transform = Transform3D(0.999827, 0.0185168, 0, -0.0185168, 0.999827, 0, 0, 0, 1, -0.0122511, 0.0606073, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Neck/Head"]
+transform = Transform3D(1, 0, 0, 7.45058e-09, 1, 0, 0, 0, 1, -0.0194393, 0.393311, 0)
+shape = SubResource("CapsuleShape3D_qwhpj")
+
+[node name="Head" type="Sprite3D" parent="Body/Neck/Head"]
+transform = Transform3D(0.998282, -0.0585921, 0, 0.0585921, 0.998282, 0, 0, 0, 1, 0.0225704, 0.0164233, 0)
+offset = Vector2(13.015, 40.55)
+flip_h = true
+flip_v = true
+render_priority = 3
+texture = ExtResource("6_hadp7")
+
+[node name="Joint_Head" type="HingeJoint3D" parent="Body/Neck/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.0872665
+angular_limit/lower = -0.0872665
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Neck"]
+transform = Transform3D(0.974015, 0.141046, 0.177202, -0.14633, 0.989089, 0.017047, -0.172864, -0.042534, 0.984027, -0.0275734, 0.101994, 0)
+shape = SubResource("CapsuleShape3D_eji0w")
+
+[node name="Neck" type="Sprite3D" parent="Body/Neck"]
+transform = Transform3D(1, -3.72529e-09, 0, 3.72529e-09, 1, 0, 0, 0, 1, -0.0124649, -0.0444301, 0)
+offset = Vector2(0, 5.43)
+texture = ExtResource("5_s2obm")
+
+[node name="Joint_Neck" type="HingeJoint3D" parent="Body/Neck"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.00630634, 0.00159812, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.872665
+angular_limit/lower = -0.349066
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
+transform = Transform3D(0.997587, -0.0694257, 0, 0.0694257, 0.997587, 0, 0, 0, 1, -0.00545723, 0.305913, 0)
+shape = SubResource("CapsuleShape3D_de0v8")
+
+[node name="Body" type="Sprite3D" parent="Body"]
+transform = Transform3D(0.999446, -0.0332773, 0, 0.0332773, 0.999446, 0, 0, 0, 1, 3.16203e-05, -0.00177242, 0)
+offset = Vector2(0, 31.21)
+flip_v = true
+render_priority = 1
+texture = ExtResource("7_yk5um")
+
+[node name="Joint_Body" type="HingeJoint3D" parent="Body"]
+transform = Transform3D(0.993544, -0.113446, 0, 0.113446, 0.993544, 0, 0, 0, 1, 0.0379195, -0.0153104, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
+
+[node name="Leg_r" type="RigidBody3D" parent="."]
+transform = Transform3D(0.483115, 0.875558, 0, -0.875558, 0.483115, 0, 0, 0, 1, -0.213, -0.167, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="LowLeg_r" type="RigidBody3D" parent="Leg_r"]
+transform = Transform3D(0.569896, -0.821717, 0, 0.821717, 0.569896, 0, 0, 0, 1, 0.376, -0.243, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="Foot_r" type="RigidBody3D" parent="Leg_r/LowLeg_r"]
+transform = Transform3D(0.999992, 0.00396195, 0, -0.00396195, 0.999992, 0, 0, 0, 1, -0.012, -0.336, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leg_r/LowLeg_r/Foot_r"]
+transform = Transform3D(0.0212392, -0.999774, 0, 0.999774, 0.0212392, 0, 0, 0, 1, 0.115054, -0.0786996, 0)
+shape = SubResource("CapsuleShape3D_r3r3k")
+
+[node name="Foot_r" type="Sprite3D" parent="Leg_r/LowLeg_r/Foot_r"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00234845, -0.031624, 0)
+offset = Vector2(10.875, -3.025)
+flip_h = true
+texture = ExtResource("8_mcytg")
+
+[node name="Joint_Foot_r" type="HingeJoint3D" parent="Leg_r/LowLeg_r/Foot_r"]
+transform = Transform3D(0.891022, -0.453959, 0, 0.453959, 0.891022, 0, 0, 0, 1, 0.0161063, 0.028237, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.567232
+angular_limit/lower = -0.71733
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leg_r/LowLeg_r"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000605419, -0.129337, 0)
+shape = SubResource("CapsuleShape3D_blcw0")
+
+[node name="LowLeg_r" type="Sprite3D" parent="Leg_r/LowLeg_r"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, -5.96046e-08, 0)
+offset = Vector2(0.89, -14.165)
+render_priority = 1
+texture = ExtResource("9_lcis0")
+
+[node name="Joint_LowLeg_r" type="HingeJoint3D" parent="Leg_r/LowLeg_r"]
+transform = Transform3D(0.892813, -0.450425, 0, 0.450425, 0.892813, 0, 0, 0, 1, -0.00557075, 0.0333036, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.471239
+angular_limit/lower = -1.08385
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leg_r"]
+transform = Transform3D(0.540461, -0.837302, -0.0826311, 0.837257, 0.544918, -0.0454563, 0.0830878, -0.0446161, 0.995543, 0.190291, -0.115843, 0)
+shape = SubResource("CapsuleShape3D_50g4q")
+
+[node name="Leg_r" type="Sprite3D" parent="Leg_r"]
+transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+offset = Vector2(17.47, -9.7)
+render_priority = 2
+texture = ExtResource("10_d2kcw")
+
+[node name="Joint_Leg_r" type="HingeJoint3D" parent="Leg_r"]
+transform = Transform3D(0.611181, -0.79149, 0, 0.79149, 0.611181, 0, 0, 0, 1, -0.0265079, 0.0303808, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.954695
+angular_limit/lower = -0.446804
+
+[node name="Leg_l" type="RigidBody3D" parent="."]
+transform = Transform3D(0.538875, 0.842387, 0, -0.842387, 0.538875, 0, 0, 0, 1, 0.157, -0.188, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="LowLeg_l" type="RigidBody3D" parent="Leg_l"]
+transform = Transform3D(0.572861, -0.819653, 0, 0.819653, 0.572861, 0, 0, 0, 1, 0.376, -0.243, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="Foot_l" type="RigidBody3D" parent="Leg_l/LowLeg_l"]
+transform = Transform3D(0.999992, 0.00396195, 0, -0.00396195, 0.999992, 0, 0, 0, 1, -0.004, -0.334, 0)
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leg_l/LowLeg_l/Foot_l"]
+transform = Transform3D(0.0212392, -0.999774, 0, 0.999774, 0.0212392, 0, 0, 0, 1, 0.110923, -0.0729303, 0)
+shape = SubResource("CapsuleShape3D_r3r3k")
+
+[node name="Foot_l" type="Sprite3D" parent="Leg_l/LowLeg_l/Foot_l"]
+transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, -0.000819802, -0.0414898, 0)
+offset = Vector2(10.875, -3.025)
+flip_h = true
+texture = ExtResource("8_mcytg")
+
+[node name="Joint_Foot_l" type="HingeJoint3D" parent="Leg_l/LowLeg_l/Foot_l"]
+transform = Transform3D(0.959141, 0.282928, 0, -0.282928, 0.959141, 0, 0, 0, 1, 0.00694051, 0.0315409, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.441568
+angular_limit/lower = -0.870919
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leg_l/LowLeg_l"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008111, -0.12519, 0)
+shape = SubResource("CapsuleShape3D_blcw0")
+
+[node name="LowLeg_l" type="Sprite3D" parent="Leg_l/LowLeg_l"]
+transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, -0.0038709, -0.00990683, 0)
+offset = Vector2(0.89, -14.165)
+render_priority = 1
+texture = ExtResource("9_lcis0")
+
+[node name="Joint_LowLeg_l" type="HingeJoint3D" parent="Leg_l/LowLeg_l"]
+transform = Transform3D(0.958012, 0.286726, 0, -0.286726, 0.958012, 0, 0, 0, 1, 0.00354746, 0.0350481, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.50091
+angular_limit/lower = -0.747001
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leg_l"]
+transform = Transform3D(0.515322, -0.856996, 0, 0.856996, 0.515322, 0, 0, 0, 1, 0.19182, -0.109935, 0)
+shape = SubResource("CapsuleShape3D_qt76e")
+
+[node name="Leg_l" type="Sprite3D" parent="Leg_l"]
+transform = Transform3D(1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+offset = Vector2(17.47, -9.7)
+render_priority = 2
+texture = ExtResource("10_d2kcw")
+
+[node name="Joint_Leg_l" type="HingeJoint3D" parent="Leg_l"]
+transform = Transform3D(0.987981, -0.154572, 0, 0.154572, 0.987981, 0, 0, 0, 1, 0.00488919, 0.010482, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.202458
+angular_limit/lower = -1.25315
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.0674406, -0.997724, 0, 0.997724, 0.0674406, 0, 0, 0, 1, -0.0295492, -0.102116, 0)
+shape = SubResource("CapsuleShape3D_sq7yr")
+
+[node name="Hip" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00882279, -0.107774, 0)
+flip_v = true
+texture = ExtResource("11_s2aq0")

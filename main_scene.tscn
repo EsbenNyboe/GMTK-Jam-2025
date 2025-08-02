@@ -5,11 +5,12 @@
 [ext_resource type="Script" uid="uid://bds4a85aygnu1" path="res://camera_controller.gd" id="2_d5x1h"]
 [ext_resource type="Script" uid="uid://ds6lj78yruhrw" path="res://rope_controller.gd" id="3_8mm7a"]
 [ext_resource type="Texture2D" uid="uid://b1kxfihw7a8v5" path="res://Textures/IMG20250731195538-removebg-preview.png" id="3_gyfs4"]
-[ext_resource type="PackedScene" uid="uid://555navtuk01d" path="res://jumping_player_rigged.tscn" id="5_qwutr"]
+[ext_resource type="PackedScene" uid="uid://bqve3xt2er15" path="res://player_3d.tscn" id="5_wr18j"]
 [ext_resource type="Script" uid="uid://banf7hpgb0mlm" path="res://sky_bg_parallax.gd" id="7_66tet"]
 [ext_resource type="Script" uid="uid://ci5hxnt6lexmq" path="res://hill_bg_parallax.gd" id="8_66tet"]
 [ext_resource type="Script" uid="uid://b8mufxodf6cb0" path="res://floor_bg_parallax.gd" id="9_7ycvg"]
-[ext_resource type="PackedScene" uid="uid://ccsuqmk2sqjdw" path="res://cloud_1.tscn" id="10_wr18j"]
+[ext_resource type="AudioStream" uid="uid://dp1hy1r888i8l" path="res://Audio/Recording-_3_.ogg" id="11_qwutr"]
+[ext_resource type="Script" uid="uid://flbehgbgv87y" path="res://wee_sound.gd" id="12_671wp"]
 [ext_resource type="Script" uid="uid://d4bobav78w1wr" path="res://cloud_bg_parallax.gd" id="14_42l1d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3jxj"]
@@ -45,8 +46,7 @@ albedo_texture = ExtResource("2_2c62f")
 material = SubResource("StandardMaterial3D_2c62f")
 size = Vector2(2, 2.65)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_671wp"]
-viewport_path = NodePath("SubViewport")
+[sub_resource type="BoxShape3D" id="BoxShape3D_wr18j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5x1h"]
 transparency = 2
@@ -58,17 +58,15 @@ albedo_texture = ExtResource("3_gyfs4")
 material = SubResource("StandardMaterial3D_d5x1h")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5x1h"]
-size = Vector3(10000, 1, 10000)
+size = Vector3(10000, 10, 10000)
 
 [sub_resource type="QuadMesh" id="QuadMesh_hq1ik"]
 size = Vector2(1000, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_qwutr"]
-
 [node name="Main Scene" type="Node3D"]
 script = ExtResource("1_0f027")
 force_amount = 5.0
-jump_multiplier = 3.0
+jump_multiplier = 50.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2c62f")
@@ -78,7 +76,7 @@ transform = Transform3D(0.919299, 0.340834, -0.196779, 0, 0.499998, 0.866027, 0.
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04044, 3.34129)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04, 4.661)
 script = ExtResource("2_d5x1h")
 lerp_factor_start = 0.001
 lerp_factor_end = 0.001
@@ -106,7 +104,7 @@ mesh = SubResource("BoxMesh_hq1ik")
 skeleton = NodePath("../..")
 
 [node name="SwingMount" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41461, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89351, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true
@@ -144,8 +142,75 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6433, 0)
 visible = false
 mesh = SubResource("QuadMesh_d5x1h")
 
-[node name="Sprite3D" parent="SwingMount/SwingSeat/SittingPlayer" instance=ExtResource("5_qwutr")]
-texture = SubResource("ViewportTexture_671wp")
+[node name="Hip" parent="SwingMount/SwingSeat/SittingPlayer" instance=ExtResource("5_wr18j")]
+script = null
+
+[node name="Arm_r" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body" index="0"]
+transform = Transform3D(-0.897112, -0.441804, 0, 0.441804, -0.897112, 0, 0, 0, 1, -0.273565, 0.54919, 0)
+
+[node name="LowArm_r" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_r" index="0"]
+transform = Transform3D(0.975284, 0.220953, 0, -0.220953, 0.975284, 0, 0, 0, 1, 0.331376, 0.184353, 0)
+
+[node name="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_r" index="1"]
+transform = Transform3D(0.585315, 0.675459, 0.448511, -0.806343, 0.542888, 0.2347, -0.0849607, -0.499027, 0.862412, 0.129239, 0.0744854, 0.0237045)
+
+[node name="Arm_r" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_r" index="2"]
+transform = Transform3D(1, -1.19209e-07, 0, 1.19209e-07, 1, 0, 0, 0, 1, 0.331376, 0.184353, 0)
+
+[node name="Arm_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body" index="1"]
+transform = Transform3D(-0.942631, 0.333841, 0, -0.333841, -0.942631, 0, 0, 0, 1, 0.251444, 0.519103, 0)
+
+[node name="LowArm_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_l" index="0"]
+transform = Transform3D(0.999987, -0.00509658, 0, 0.00509658, 0.999987, 0, 0, 0, 1, -0.370601, 0.166252, 0)
+
+[node name="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_l" index="1"]
+transform = Transform3D(-0.301422, 0.941845, -0.148571, -0.833275, -0.33594, -0.439085, -0.463461, -0.00854975, 0.886076, -0.190554, 0.0586775, -0.0169145)
+
+[node name="Arm_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_l" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343753, 0.142466, 0)
+
+[node name="Head" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Neck" index="0"]
+transform = Transform3D(0.999827, 0.0185168, 0, -0.0185168, 0.999827, 0, 0, 0, 1, 0.0208526, 0.123791, 0)
+
+[node name="SeatStaticBody" type="StaticBody3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/SeatStaticBody"]
+shape = SubResource("BoxShape3D_wr18j")
+disabled = true
+
+[node name="HandMountStaticBody_r" type="StaticBody3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.404206, 0.878361, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/HandMountStaticBody_r"]
+shape = SubResource("BoxShape3D_wr18j")
+disabled = true
+
+[node name="HandMountStaticBody_l" type="StaticBody3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.485113, 0.925065, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/HandMountStaticBody_l"]
+shape = SubResource("BoxShape3D_wr18j")
+disabled = true
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/StaticBody3D2"]
+shape = SubResource("BoxShape3D_wr18j")
+disabled = true
+
+[node name="SeatJoint" type="PinJoint3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+node_a = NodePath("../SeatStaticBody")
+node_b = NodePath("../Hip")
+
+[node name="HandJoint_r" type="PinJoint3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.404206, 0.894152, 0)
+node_a = NodePath("../Hip/Body/Arm_r/LowArm_r/Hand_r")
+node_b = NodePath("../HandMountStaticBody_r")
+
+[node name="HandJoint_l" type="PinJoint3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.455496, 0.925065, 0)
+node_a = NodePath("../Hip/Body/Arm_l/LowArm_l/Hand_l")
+node_b = NodePath("../HandMountStaticBody_l")
 
 [node name="SwingSeatJoint" type="RigidBody3D" parent="."]
 
@@ -155,6 +220,7 @@ mesh = SubResource("BoxMesh_o3jxj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SwingSeatJoint"]
 shape = SubResource("BoxShape3D_o3jxj")
+disabled = true
 
 [node name="PinJoint3D" type="PinJoint3D" parent="."]
 node_a = NodePath("../SwingMount")
@@ -168,6 +234,7 @@ mesh = SubResource("QuadMesh_8mm7a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5952, -0.396854)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 0)
 shape = SubResource("BoxShape3D_d5x1h")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
@@ -184,7 +251,7 @@ mesh_distance = 50.0
 
 [node name="FloorBackground" type="Node3D" parent="."]
 script = ExtResource("9_7ycvg")
-ring_count = 20
+ring_count = 40
 mesh_scale = 15.0
 mesh_distance = 0.5
 floor_height = -9.5
@@ -207,7 +274,7 @@ height = -25.0
 distance = 11.0
 spacing = 45.0
 repeats = 20
-offset = 8.5
+offset = 16.0
 
 [node name="HillBackground3" type="Node3D" parent="."]
 script = ExtResource("8_66tet")
@@ -217,7 +284,7 @@ height = -22.0
 distance = 9.8
 spacing = 35.0
 repeats = 20
-offset = 12.0
+offset = 27.0
 
 [node name="HillBackground4" type="Node3D" parent="."]
 script = ExtResource("8_66tet")
@@ -227,7 +294,7 @@ height = -35.0
 distance = 9.7
 spacing = 40.0
 repeats = 20
-offset = 15.0
+offset = 55.0
 
 [node name="CloudBackground1" type="Node3D" parent="."]
 script = ExtResource("14_42l1d")
@@ -235,7 +302,10 @@ element_index = 1
 mesh_scale = 20.0
 height = 5.0
 distance = 22.0
+spacing_x = 80.0
+spacing_y = 80.0
 repeats = 20
+offset = 95.0
 
 [node name="CloudBackground2" type="Node3D" parent="."]
 script = ExtResource("14_42l1d")
@@ -243,8 +313,10 @@ element_index = 2
 mesh_scale = 20.0
 height = 11.0
 distance = 35.0
+spacing_x = 110.0
+spacing_y = 120.0
 repeats = 20
-offset = 5.0
+offset = 88.0
 
 [node name="CloudBackground3" type="Node3D" parent="."]
 script = ExtResource("14_42l1d")
@@ -252,8 +324,10 @@ element_index = 3
 mesh_scale = 20.0
 height = 24.0
 distance = 33.0
+spacing_x = 144.0
+spacing_y = 164.0
 repeats = 20
-offset = 12.0
+offset = 36.0
 
 [node name="CloudBackground4" type="Node3D" parent="."]
 script = ExtResource("14_42l1d")
@@ -261,38 +335,24 @@ element_index = 4
 mesh_scale = 20.0
 height = 34.0
 distance = 44.0
+spacing_x = 185.0
+spacing_y = 135.0
 repeats = 20
-offset = 14.0
+offset = -16.0
 
 [node name="CloudBackground5" type="Node3D" parent="."]
 script = ExtResource("14_42l1d")
 element_index = 5
 mesh_scale = 20.0
 height = 22.0
-distance = 48.0
+distance = 47.0
+spacing_x = 140.0
+spacing_y = 120.0
 repeats = 20
-offset = 17.0
+offset = 27.0
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0229, 0, 0)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_qwutr")
+script = ExtResource("12_671wp")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-shape = SubResource("BoxShape3D_qwutr")
-
-[node name="Cloud1" parent="StaticBody3D2" instance=ExtResource("10_wr18j")]
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2862, 1.51153, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
-shape = SubResource("BoxShape3D_qwutr")
-
-[node name="Cloud1" parent="StaticBody3D3" instance=ExtResource("10_wr18j")]
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8769, 3.30769, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
-shape = SubResource("BoxShape3D_qwutr")
-
-[node name="Cloud1" parent="StaticBody3D4" instance=ExtResource("10_wr18j")]
+[editable path="SwingMount/SwingSeat/SittingPlayer/Hip"]
