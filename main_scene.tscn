@@ -64,7 +64,7 @@ size = Vector2(1000, 1)
 [node name="Main Scene" type="Node3D"]
 script = ExtResource("1_0f027")
 force_amount = 5.0
-jump_multiplier = 15.0
+jump_multiplier = 100.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2c62f")
@@ -169,7 +169,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.541131, 0.780622, 0)
 
 [node name="Head" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Joints" index="8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.773191, 0)
-node_a = NodePath("../../Body/Neck")
 
 [node name="SeatStaticBody" type="StaticBody3D" parent="SwingMount/SwingSeat/SittingPlayer"]
 
@@ -272,7 +271,7 @@ height = -25.0
 distance = 11.0
 spacing = 45.0
 repeats = 20
-offset = 8.5
+offset = 16.0
 
 [node name="HillBackground3" type="Node3D" parent="."]
 script = ExtResource("8_66tet")
@@ -282,7 +281,7 @@ height = -22.0
 distance = 9.8
 spacing = 35.0
 repeats = 20
-offset = 12.0
+offset = 27.0
 
 [node name="HillBackground4" type="Node3D" parent="."]
 script = ExtResource("8_66tet")
@@ -292,7 +291,7 @@ height = -35.0
 distance = 9.7
 spacing = 40.0
 repeats = 20
-offset = 15.0
+offset = 55.0
 
 [node name="CloudBackground1" type="Node3D" parent="."]
 script = ExtResource("14_42l1d")
@@ -300,7 +299,10 @@ element_index = 1
 mesh_scale = 20.0
 height = 5.0
 distance = 22.0
+spacing_x = 80.0
+spacing_y = 80.0
 repeats = 20
+offset = 95.0
 
 [node name="CloudBackground2" type="Node3D" parent="."]
 script = ExtResource("14_42l1d")
@@ -308,8 +310,10 @@ element_index = 2
 mesh_scale = 20.0
 height = 11.0
 distance = 35.0
+spacing_x = 110.0
+spacing_y = 120.0
 repeats = 20
-offset = 5.0
+offset = 88.0
 
 [node name="CloudBackground3" type="Node3D" parent="."]
 script = ExtResource("14_42l1d")
@@ -317,8 +321,10 @@ element_index = 3
 mesh_scale = 20.0
 height = 24.0
 distance = 33.0
+spacing_x = 144.0
+spacing_y = 164.0
 repeats = 20
-offset = 12.0
+offset = 36.0
 
 [node name="CloudBackground4" type="Node3D" parent="."]
 script = ExtResource("14_42l1d")
@@ -326,16 +332,20 @@ element_index = 4
 mesh_scale = 20.0
 height = 34.0
 distance = 44.0
+spacing_x = 185.0
+spacing_y = 135.0
 repeats = 20
-offset = 14.0
+offset = -16.0
 
 [node name="CloudBackground5" type="Node3D" parent="."]
 script = ExtResource("14_42l1d")
 element_index = 5
 mesh_scale = 20.0
 height = 22.0
-distance = 48.0
+distance = 47.0
+spacing_x = 140.0
+spacing_y = 120.0
 repeats = 20
-offset = 17.0
+offset = 27.0
 
 [editable path="SwingMount/SwingSeat/SittingPlayer/Hip"]
