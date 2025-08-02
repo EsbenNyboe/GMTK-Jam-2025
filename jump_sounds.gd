@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 		has_jumped = true
 		yell_audio.play()
 	
-	if !has_landed && has_jumped && JumpingPlayer.instance.game_over:
+	if !has_landed && has_jumped && PlayerRagdoll.instance:
 		has_landed = true
 		yell_audio.stop()
 		grunt_audio.play()

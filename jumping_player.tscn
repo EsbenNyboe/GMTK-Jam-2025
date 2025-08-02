@@ -12,3 +12,4 @@ script = ExtResource("1_yemrc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_yemrc")
+disabled = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://4nufg1p5te8r"]
 
-[ext_resource type="PackedScene" uid="uid://bqve3xt2er15" path="res://player_3d.tscn" id="1_pq8q7"]
+[ext_resource type="PackedScene" uid="uid://bqve3xt2er15" path="res://player_ragdoll.tscn" id="1_pq8q7"]
 
 [node name="root" type="Node3D"]
 
