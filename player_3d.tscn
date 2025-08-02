@@ -245,11 +245,12 @@ render_priority = 3
 texture = ExtResource("6_hadp7")
 
 [node name="Joint_Head" type="HingeJoint3D" parent="Body/Neck/Head"]
-transform = Transform3D(0.7443, 0.667846, 0, -0.667846, 0.7443, 0, 0, 0, 1, 0.0274552, 0.000563145, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
-angular_limit/upper = 0.349066
+angular_limit/enable = true
+angular_limit/upper = 0.872665
 angular_limit/lower = -0.349066
 
 [node name="Neck" type="Sprite3D" parent="Body/Neck"]
@@ -283,8 +284,8 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
 angular_limit/enable = true
-angular_limit/upper = -0.907571
-angular_limit/lower = -1.57429
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="Leg_r" type="RigidBody3D" parent="."]
 transform = Transform3D(0.483115, 0.875558, 0, -0.875558, 0.483115, 0, 0, 0, 1, -0.213, -0.167, 0)
