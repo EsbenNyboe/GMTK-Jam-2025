@@ -18,6 +18,9 @@ func _process(delta: float) -> void:
 	if above_top_point && on_left_side && has_passed_bottom_point && !has_passed_top_point:
 		has_passed_top_point = true
 		has_passed_bottom_point = false
+		var clamped_velocity = clampf(MainScene.instance.swing_mount.angular_velocity.z, 0, 20)	
+		var pitch = remap(MainScene.instance.swing_mount.angular_velocity.z, 0, 20, 1, 2)
+		pitch_scale = pitch
 		play(0.78)
 	
 	if below_bottom_point:
