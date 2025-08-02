@@ -143,15 +143,73 @@ mesh = SubResource("QuadMesh_d5x1h")
 [node name="Hip" parent="SwingMount/SwingSeat/SittingPlayer" instance=ExtResource("5_wr18j")]
 script = null
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+[node name="Arm_r" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body" index="0"]
+transform = Transform3D(-0.897112, -0.441804, 0, 0.441804, -0.897112, 0, 0, 0, 1, -0.273565, 0.54919, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/StaticBody3D"]
+[node name="LowArm_r" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_r" index="0"]
+transform = Transform3D(0.975284, 0.220953, 0, -0.220953, 0.975284, 0, 0, 0, 1, 0.331376, 0.184353, 0)
+
+[node name="Arm_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body" index="1"]
+transform = Transform3D(-0.942631, 0.333841, 0, -0.333841, -0.942631, 0, 0, 0, 1, 0.251444, 0.519103, 0)
+
+[node name="LowArm_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_l" index="0"]
+transform = Transform3D(0.999987, -0.00509658, 0, 0.00509658, 0.999987, 0, 0, 0, 1, -0.370601, 0.166252, 0)
+
+[node name="LowArm_r" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Joints" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.675833, 0.612978, 0)
+
+[node name="Hand_r" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Joints" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.551926, 0.76363, 0)
+
+[node name="LowArm_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Joints" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6305, 0.580759, 0)
+
+[node name="Hand_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Joints" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.541131, 0.780622, 0)
+
+[node name="Head" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Joints" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.773191, 0)
+node_a = NodePath("../../Body/Neck")
+
+[node name="SeatStaticBody" type="StaticBody3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/SeatStaticBody"]
 shape = SubResource("BoxShape3D_wr18j")
 disabled = true
 
-[node name="PinJoint3D" type="PinJoint3D" parent="SwingMount/SwingSeat/SittingPlayer"]
-node_a = NodePath("../StaticBody3D")
+[node name="HandMountStaticBody_r" type="StaticBody3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.404206, 0.878361, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/HandMountStaticBody_r"]
+shape = SubResource("BoxShape3D_wr18j")
+disabled = true
+
+[node name="HandMountStaticBody_l" type="StaticBody3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.485113, 0.925065, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/HandMountStaticBody_l"]
+shape = SubResource("BoxShape3D_wr18j")
+disabled = true
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/StaticBody3D2"]
+shape = SubResource("BoxShape3D_wr18j")
+disabled = true
+
+[node name="SeatJoint" type="PinJoint3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+node_a = NodePath("../SeatStaticBody")
 node_b = NodePath("../Hip")
+
+[node name="HandJoint_r" type="PinJoint3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.404206, 0.894152, 0)
+node_a = NodePath("../Hip/Body/Arm_r/LowArm_r/Hand_r")
+node_b = NodePath("../HandMountStaticBody_r")
+
+[node name="HandJoint_l" type="PinJoint3D" parent="SwingMount/SwingSeat/SittingPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.455496, 0.925065, 0)
+node_a = NodePath("../Hip/Body/Arm_l/LowArm_l/Hand_l")
+node_b = NodePath("../HandMountStaticBody_l")
 
 [node name="SwingSeatJoint" type="RigidBody3D" parent="."]
 
@@ -279,3 +337,5 @@ height = 22.0
 distance = 48.0
 repeats = 20
 offset = 17.0
+
+[editable path="SwingMount/SwingSeat/SittingPlayer/Hip"]
