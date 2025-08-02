@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=27 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="2_2c62f"]
 [ext_resource type="Script" uid="uid://bds4a85aygnu1" path="res://camera_controller.gd" id="2_d5x1h"]
 [ext_resource type="Script" uid="uid://ds6lj78yruhrw" path="res://rope_controller.gd" id="3_8mm7a"]
 [ext_resource type="Texture2D" uid="uid://b1kxfihw7a8v5" path="res://Textures/IMG20250731195538-removebg-preview.png" id="3_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://555navtuk01d" path="res://jumping_player_rigged.tscn" id="5_qwutr"]
 [ext_resource type="Script" uid="uid://banf7hpgb0mlm" path="res://sky_bg_parallax.gd" id="7_66tet"]
 [ext_resource type="Script" uid="uid://ci5hxnt6lexmq" path="res://hill_bg_parallax.gd" id="8_66tet"]
 [ext_resource type="Script" uid="uid://b8mufxodf6cb0" path="res://floor_bg_parallax.gd" id="9_7ycvg"]
@@ -43,6 +44,9 @@ albedo_texture = ExtResource("2_2c62f")
 [sub_resource type="QuadMesh" id="QuadMesh_d5x1h"]
 material = SubResource("StandardMaterial3D_2c62f")
 size = Vector2(2, 2.65)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_671wp"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5x1h"]
 transparency = 2
@@ -137,7 +141,11 @@ skeleton = NodePath("../..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SwingMount/SwingSeat/SittingPlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6433, 0)
+visible = false
 mesh = SubResource("QuadMesh_d5x1h")
+
+[node name="Sprite3D" parent="SwingMount/SwingSeat/SittingPlayer" instance=ExtResource("5_qwutr")]
+texture = SubResource("ViewportTexture_671wp")
 
 [node name="SwingSeatJoint" type="RigidBody3D" parent="."]
 
