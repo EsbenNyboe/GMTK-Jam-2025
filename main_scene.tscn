@@ -215,6 +215,8 @@ node_b = NodePath("../HandMountStaticBody_l")
 
 [node name="Swing_AnimatedSprite3D" parent="SwingMount/SwingSeat/SittingPlayer" instance=ExtResource("18_7th4q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105599, 0.27781, 0)
+frame = 4
+frame_progress = 0.603085
 
 [node name="SwingSeatJoint" type="RigidBody3D" parent="."]
 
