@@ -318,87 +318,132 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00506225, 0.0184866, 0)
 node_a = NodePath("../..")
 node_b = NodePath("../../Body")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="Arm_r" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230987, 0.619019, 0)
 node_a = NodePath("../../Body")
 node_b = NodePath("../../Body/Arm_r")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="LowArm_r" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.474961, 0.339525, 0)
 node_a = NodePath("../../Body/Arm_r")
 node_b = NodePath("../../Body/Arm_r/LowArm_r")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="Hand_r" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.712569, 0.3215, 0)
 node_a = NodePath("../../Body/Arm_r/LowArm_r")
 node_b = NodePath("../../Body/Arm_r/LowArm_r/Hand_r")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="Arm_l" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263399, 0.534168, 0)
 node_a = NodePath("../../Body")
 node_b = NodePath("../../Body/Arm_l")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="LowArm_l" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.540213, 0.290365, 0)
 node_a = NodePath("../../Body/Arm_l")
 node_b = NodePath("../../Body/Arm_l/LowArm_l")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="Hand_l" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.617649, 0.0433053, 0)
 node_a = NodePath("../../Body/Arm_l/LowArm_l")
 node_b = NodePath("../../Body/Arm_l/LowArm_l/Hand_l")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="Neck" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0494702, 0.649413, 0)
 node_a = NodePath("../../Body")
 node_b = NodePath("../../Body/Neck")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="Head" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0639461, 0.707364, 0)
 node_a = NodePath("../../Body/Neck")
 node_b = NodePath("../../Body/Neck/Head")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="Leg_r" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.205155, -0.127451, 0)
 node_a = NodePath("../..")
 node_b = NodePath("../../Leg_r")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="LowLeg_r" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165501, -0.580875, 0)
 node_a = NodePath("../../Leg_r")
 node_b = NodePath("../../Leg_r/LowLeg_r")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="Foot_r" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.310415, -0.88985, 0)
 node_a = NodePath("../../Leg_r/LowLeg_r")
 node_b = NodePath("../../Leg_r/LowLeg_r/Foot_r")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="Leg_l" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163451, -0.1784, 0)
 node_a = NodePath("../..")
 node_b = NodePath("../../Leg_l")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="LowLeg_l" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484269, -0.451605, 0)
 node_a = NodePath("../../Leg_l")
 node_b = NodePath("../../Leg_l/LowLeg_l")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
 
 [node name="Foot_l" type="HingeJoint3D" parent="Joints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.580588, -0.775106, 0)
 node_a = NodePath("../../Leg_l/LowLeg_l")
 node_b = NodePath("../../Leg_l/LowLeg_l/Foot_l")
 solver_priority = 5
+angular_limit/enable = true
+angular_limit/upper = 0.349066
+angular_limit/lower = -0.349066
