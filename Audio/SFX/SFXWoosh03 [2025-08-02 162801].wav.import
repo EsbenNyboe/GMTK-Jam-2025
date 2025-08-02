@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bolci44kvsroi"
+path="res://.godot/imported/SFXWoosh03 [2025-08-02 162801].wav-6cb3fd7f6140a28b37940f7764414f85.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/SFXWoosh03 [2025-08-02 162801].wav"
+dest_files=["res://.godot/imported/SFXWoosh03 [2025-08-02 162801].wav-6cb3fd7f6140a28b37940f7764414f85.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

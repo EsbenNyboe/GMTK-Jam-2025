@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cgei1ifqas67y"
+path="res://.godot/imported/SFXWeeShort02 [2025-08-02 155536].wav-efa2fd431628eba7bf71e058acd6d65e.sample"
+
+[deps]
+
+source_file="res://Audio/Player/SFXWeeShort02 [2025-08-02 155536].wav"
+dest_files=["res://.godot/imported/SFXWeeShort02 [2025-08-02 155536].wav-efa2fd431628eba7bf71e058acd6d65e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://docra4l70lv0f"
+path="res://.godot/imported/SFXWoosh13 [2025-08-02 162811].wav-e7ccd160b9eeb2130933411a3025cb44.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/SFXWoosh13 [2025-08-02 162811].wav"
+dest_files=["res://.godot/imported/SFXWoosh13 [2025-08-02 162811].wav-e7ccd160b9eeb2130933411a3025cb44.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

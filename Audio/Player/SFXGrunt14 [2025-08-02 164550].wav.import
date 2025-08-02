@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ciy5chey6vldp"
+path="res://.godot/imported/SFXGrunt14 [2025-08-02 164550].wav-089082b4ec479d8cce770a8fcf18c566.sample"
+
+[deps]
+
+source_file="res://Audio/Player/SFXGrunt14 [2025-08-02 164550].wav"
+dest_files=["res://.godot/imported/SFXGrunt14 [2025-08-02 164550].wav-089082b4ec479d8cce770a8fcf18c566.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

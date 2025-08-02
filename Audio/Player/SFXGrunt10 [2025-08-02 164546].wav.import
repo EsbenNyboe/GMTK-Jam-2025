@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c6j40l6ye3m0k"
+path="res://.godot/imported/SFXGrunt10 [2025-08-02 164546].wav-ce1d923c0a757f45a4d0a94a7e4c99b0.sample"
+
+[deps]
+
+source_file="res://Audio/Player/SFXGrunt10 [2025-08-02 164546].wav"
+dest_files=["res://.godot/imported/SFXGrunt10 [2025-08-02 164546].wav-ce1d923c0a757f45a4d0a94a7e4c99b0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

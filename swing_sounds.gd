@@ -1,4 +1,7 @@
-extends AudioStreamPlayer
+extends Node
+
+@onready var wee_audio: AudioStreamPlayer = $Wee_Audio
+@onready var woosh_audio: AudioStreamPlayer = $Woosh_Audio
 
 @onready var swing_seat_joint: RigidBody3D = $"../SwingSeatJoint"
 @export var top_point: float = 3.0
@@ -21,10 +24,13 @@ func _process(delta: float) -> void:
 		has_passed_bottom_point = false
 		var clamped_velocity = clampf(MainScene.instance.swing_mount.angular_velocity.z, 0, max_velocity)	
 		var pitch = remap(clamped_velocity, 0, max_velocity, 1, 2)
-		pitch_scale = pitch
-		play(0.78)
+		#wee_audio.pitch_scale = pitch
+		wee_audio.play()
+		print("yo")
 	
 	if below_bottom_point:
+		if !has_passed_bottom_point && has_passed_top_point:
+			woosh_audio.play()
 		has_passed_top_point = false
 		has_passed_bottom_point = true
 	

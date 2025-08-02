@@ -1,0 +1,39 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=18 format=3 uid="uid://btnx2b16tqvj4"]
+
+[ext_resource type="AudioStream" uid="uid://c1r2ccdtpy0qq" path="res://Audio/Player/SFXGrunt01 [2025-08-02 164539].wav" id="1_1nxc5"]
+[ext_resource type="AudioStream" uid="uid://t4tpowwat0er" path="res://Audio/Player/SFXGrunt02 [2025-08-02 164540].wav" id="2_d4lkr"]
+[ext_resource type="AudioStream" uid="uid://b54xhn3nr3fxi" path="res://Audio/Player/SFXGrunt11 [2025-08-02 164547].wav" id="3_0e4e0"]
+[ext_resource type="AudioStream" uid="uid://dma8kaof4mp81" path="res://Audio/Player/SFXGrunt12 [2025-08-02 164548].wav" id="4_mbglo"]
+[ext_resource type="AudioStream" uid="uid://bqoq4vbkjj3ns" path="res://Audio/Player/SFXGrunt13 [2025-08-02 164549].wav" id="5_hh08j"]
+[ext_resource type="AudioStream" uid="uid://ciy5chey6vldp" path="res://Audio/Player/SFXGrunt14 [2025-08-02 164550].wav" id="6_og8rb"]
+[ext_resource type="AudioStream" uid="uid://b60xscq2ecpi" path="res://Audio/Player/SFXGrunt15 [2025-08-02 164551].wav" id="7_e03ea"]
+[ext_resource type="AudioStream" uid="uid://c34vvsx787qul" path="res://Audio/Player/SFXGrunt16 [2025-08-02 164554].wav" id="8_bydub"]
+[ext_resource type="AudioStream" uid="uid://duk85b0oixghx" path="res://Audio/Player/SFXGrunt17 [2025-08-02 164556].wav" id="9_7ss6j"]
+[ext_resource type="AudioStream" uid="uid://b5ugdomcexk8i" path="res://Audio/Player/SFXGrunt03 [2025-08-02 164541].wav" id="10_b22ec"]
+[ext_resource type="AudioStream" uid="uid://btj3fiyyv77i0" path="res://Audio/Player/SFXGrunt04 [2025-08-02 164541].wav" id="11_471w8"]
+[ext_resource type="AudioStream" uid="uid://cyxndjjpdlry1" path="res://Audio/Player/SFXGrunt05 [2025-08-02 164542].wav" id="12_veu02"]
+[ext_resource type="AudioStream" uid="uid://bbw0tyr71ou7e" path="res://Audio/Player/SFXGrunt06 [2025-08-02 164543].wav" id="13_ylbtp"]
+[ext_resource type="AudioStream" uid="uid://dhtx615s0678u" path="res://Audio/Player/SFXGrunt07 [2025-08-02 164544].wav" id="14_ew6h0"]
+[ext_resource type="AudioStream" uid="uid://cay7pme2hc2v0" path="res://Audio/Player/SFXGrunt08 [2025-08-02 164545].wav" id="15_bobpd"]
+[ext_resource type="AudioStream" uid="uid://cljomf58u8fui" path="res://Audio/Player/SFXGrunt09 [2025-08-02 164545].wav" id="16_npb8h"]
+[ext_resource type="AudioStream" uid="uid://c6j40l6ye3m0k" path="res://Audio/Player/SFXGrunt10 [2025-08-02 164546].wav" id="17_uo7fs"]
+
+[resource]
+streams_count = 17
+stream_0/stream = ExtResource("1_1nxc5")
+stream_1/stream = ExtResource("2_d4lkr")
+stream_2/stream = ExtResource("10_b22ec")
+stream_3/stream = ExtResource("11_471w8")
+stream_4/stream = ExtResource("12_veu02")
+stream_5/stream = ExtResource("13_ylbtp")
+stream_6/stream = ExtResource("14_ew6h0")
+stream_7/stream = ExtResource("15_bobpd")
+stream_8/stream = ExtResource("16_npb8h")
+stream_9/stream = ExtResource("17_uo7fs")
+stream_10/stream = ExtResource("3_0e4e0")
+stream_11/stream = ExtResource("4_mbglo")
+stream_12/stream = ExtResource("5_hh08j")
+stream_13/stream = ExtResource("6_og8rb")
+stream_14/stream = ExtResource("7_e03ea")
+stream_15/stream = ExtResource("8_bydub")
+stream_16/stream = ExtResource("9_7ss6j")
