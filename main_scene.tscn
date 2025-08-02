@@ -9,8 +9,8 @@
 [ext_resource type="Script" uid="uid://banf7hpgb0mlm" path="res://sky_bg_parallax.gd" id="7_66tet"]
 [ext_resource type="Script" uid="uid://ci5hxnt6lexmq" path="res://hill_bg_parallax.gd" id="8_66tet"]
 [ext_resource type="Script" uid="uid://b8mufxodf6cb0" path="res://floor_bg_parallax.gd" id="9_7ycvg"]
-[ext_resource type="AudioStream" uid="uid://dp1hy1r888i8l" path="res://Audio/Recording-_3_.ogg" id="11_qwutr"]
-[ext_resource type="Script" uid="uid://flbehgbgv87y" path="res://wee_sound.gd" id="12_671wp"]
+[ext_resource type="Script" uid="uid://b6l1aheeeouep" path="res://swing_sounds.gd" id="11_mo76n"]
+[ext_resource type="AudioStream" uid="uid://d8ok6fgt3isb" path="res://Audio/audio_wee.tres" id="12_mo76n"]
 [ext_resource type="Script" uid="uid://d4bobav78w1wr" path="res://cloud_bg_parallax.gd" id="14_42l1d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3jxj"]
@@ -345,8 +345,10 @@ spacing_y = 120.0
 repeats = 20
 offset = 27.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_qwutr")
-script = ExtResource("12_671wp")
+[node name="SwingSounds" type="Node" parent="."]
+script = ExtResource("11_mo76n")
+
+[node name="Wee_Audio" type="AudioStreamPlayer" parent="SwingSounds"]
+stream = ExtResource("12_mo76n")
 
 [editable path="SwingMount/SwingSeat/SittingPlayer/Hip"]

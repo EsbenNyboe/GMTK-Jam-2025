@@ -245,7 +245,6 @@ render_priority = 3
 texture = ExtResource("6_hadp7")
 
 [node name="Joint_Head" type="HingeJoint3D" parent="Body/Neck/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 node_a = NodePath("../..")
 node_b = NodePath("..")
 solver_priority = 5
