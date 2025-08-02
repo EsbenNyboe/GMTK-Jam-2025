@@ -60,25 +60,25 @@ axis_lock_angular_y = true
 script = ExtResource("1_de0v8")
 
 [node name="Body" type="RigidBody3D" parent="."]
-transform = Transform3D(0.993544, 0.113446, 0, -0.113446, 0.993544, 0, 0, 0, 1, -0.041, 0.038, 0.001)
+transform = Transform3D(0.993544, 0.113446, 0, -0.113446, 0.993544, 0, 0, 0, 1, -0.041, 0.038, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Arm_r" type="RigidBody3D" parent="Body"]
-transform = Transform3D(-0.891158, 0.453695, 0, -0.453695, -0.891158, 0, 0, 0, 1, -0.274, 0.549, 0.001)
+transform = Transform3D(-0.891158, 0.453695, 0, -0.453695, -0.891158, 0, 0, 0, 1, -0.274, 0.549, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="LowArm_r" type="RigidBody3D" parent="Body/Arm_r"]
-transform = Transform3D(0.284752, -0.958601, 0, 0.958601, 0.284752, 0, 0, 0, 1, 0.331, 0.184, 0.001)
+transform = Transform3D(0.284752, -0.958601, 0, 0.958601, 0.284752, 0, 0, 0, 1, 0.331, 0.184, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Hand_r" type="RigidBody3D" parent="Body/Arm_r/LowArm_r"]
-transform = Transform3D(0.998803, -0.0489021, 0, 0.0489021, 0.998803, 0, 0, 0, 1, -0.004, -0.227, -0.001)
+transform = Transform3D(0.998803, -0.0489021, 0, 0.0489021, 0.998803, 0, 0, 0, 1, -0.004, -0.227, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -99,6 +99,7 @@ shape = SubResource("CapsuleShape3D_gd4vy")
 [node name="LowArm_r" type="Sprite3D" parent="Body/Arm_r/LowArm_r"]
 transform = Transform3D(1, -4.47035e-08, 0, 4.47035e-08, 1, 0, 0, 0, 1, 5.96046e-08, -2.98023e-08, 0)
 offset = Vector2(0.685, -11.515)
+render_priority = 1
 texture = ExtResource("3_q6nvt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Arm_r"]
@@ -108,22 +109,23 @@ shape = SubResource("CapsuleShape3D_qw60f")
 [node name="Arm_r" type="Sprite3D" parent="Body/Arm_r"]
 transform = Transform3D(1, -1.19209e-07, 0, 1.19209e-07, 1, 0, 0, 0, 1, 0.331376, 0.184353, 0)
 offset = Vector2(-15.395, -9.51)
+render_priority = 2
 texture = ExtResource("4_3dh3c")
 
 [node name="Arm_l" type="RigidBody3D" parent="Body"]
-transform = Transform3D(-0.975378, -0.220544, 0, 0.220544, -0.975378, 0, 0, 0, 1, 0.233, 0.519, 0.001)
+transform = Transform3D(-0.975378, -0.220544, 0, 0.220544, -0.975378, 0, 0, 0, 1, 0.233, 0.519, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="LowArm_l" type="RigidBody3D" parent="Body/Arm_l"]
-transform = Transform3D(-0.782478, 0.622679, 0, -0.622679, -0.782478, 0, 0, 0, 1, -0.371, 0.166, 0.001)
+transform = Transform3D(-0.782478, 0.622679, 0, -0.622679, -0.782478, 0, 0, 0, 1, -0.371, 0.166, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Hand_l" type="RigidBody3D" parent="Body/Arm_l/LowArm_l"]
-transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.003, -0.232, -0.001)
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.003, -0.232, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -146,6 +148,7 @@ shape = SubResource("CapsuleShape3D_gd4vy")
 transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -5.96046e-08, 2.98023e-08, 0)
 offset = Vector2(-0.84, -12.03)
 flip_h = true
+render_priority = 1
 texture = ExtResource("3_q6nvt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Arm_l"]
@@ -156,10 +159,11 @@ shape = SubResource("CapsuleShape3D_qw60f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343753, 0.142466, 0)
 offset = Vector2(15.515, -6.965)
 flip_v = true
+render_priority = 2
 texture = ExtResource("4_3dh3c")
 
 [node name="Neck" type="RigidBody3D" parent="Body"]
-transform = Transform3D(0.99983, -0.0185169, 0, 0.0185169, 0.99983, 0, 0, 0, 1, 0.035, 0.614, -0.001)
+transform = Transform3D(0.99983, -0.0185169, 0, 0.0185169, 0.99983, 0, 0, 0, 1, 0.0142481, 0.616015, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -174,7 +178,7 @@ offset = Vector2(0, 5.43)
 texture = ExtResource("5_s2obm")
 
 [node name="Head" type="RigidBody3D" parent="Body/Neck"]
-transform = Transform3D(0.999827, 0.0185168, 0, -0.0185168, 0.999827, 0, 0, 0, 1, -0.012, 0.042, 0.001)
+transform = Transform3D(0.999827, 0.0185168, 0, -0.0185168, 0.999827, 0, 0, 0, 1, -0.0122511, 0.0606074, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -184,10 +188,11 @@ transform = Transform3D(0.974015, 0.141046, 0.177202, -0.14633, 0.989089, 0.0170
 shape = SubResource("CapsuleShape3D_qwhpj")
 
 [node name="Head" type="Sprite3D" parent="Body/Neck/Head"]
-transform = Transform3D(1, -1.86265e-09, 0, 1.86265e-09, 1, 0, 0, 0, 1, 0.0219748, 0.0350229, 0)
+transform = Transform3D(0.998282, -0.0585921, 0, 0.0585921, 0.998282, 0, 0, 0, 1, 0.0225704, 0.0164233, 0)
 offset = Vector2(13.015, 40.55)
 flip_h = true
 flip_v = true
+render_priority = 3
 texture = ExtResource("6_hadp7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
@@ -198,22 +203,23 @@ shape = SubResource("CapsuleShape3D_qt76e")
 transform = Transform3D(0.999446, -0.0332773, 0, 0.0332773, 0.999446, 0, 0, 0, 1, 3.16203e-05, -0.00177242, 0)
 offset = Vector2(0, 31.21)
 flip_v = true
+render_priority = 1
 texture = ExtResource("7_yk5um")
 
 [node name="Leg_r" type="RigidBody3D" parent="."]
-transform = Transform3D(0.611182, 0.791491, 0, -0.791491, 0.611182, 0, 0, 0, 1, -0.213, -0.167, 0.001)
+transform = Transform3D(0.611182, 0.791491, 0, -0.791491, 0.611182, 0, 0, 0, 1, -0.213, -0.167, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="LowLeg_r" type="RigidBody3D" parent="Leg_r"]
-transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.376, -0.243, -0.001)
+transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.376, -0.243, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Foot_r" type="RigidBody3D" parent="Leg_r/LowLeg_r"]
-transform = Transform3D(0.999992, 0.00396195, 0, -0.00396195, 0.999992, 0, 0, 0, 1, -0.012, -0.336, 0.001)
+transform = Transform3D(0.999992, 0.00396195, 0, -0.00396195, 0.999992, 0, 0, 0, 1, -0.012, -0.336, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -235,6 +241,7 @@ shape = SubResource("CapsuleShape3D_blcw0")
 [node name="LowLeg_r" type="Sprite3D" parent="Leg_r/LowLeg_r"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, -5.96046e-08, 0)
 offset = Vector2(0.89, -14.165)
+render_priority = 1
 texture = ExtResource("9_lcis0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Leg_r"]
@@ -244,22 +251,23 @@ shape = SubResource("CapsuleShape3D_50g4q")
 [node name="Leg_r" type="Sprite3D" parent="Leg_r"]
 transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
 offset = Vector2(17.47, -9.7)
+render_priority = 2
 texture = ExtResource("10_d2kcw")
 
 [node name="Leg_l" type="RigidBody3D" parent="."]
-transform = Transform3D(0.987982, 0.154572, 0, -0.154572, 0.987982, 0, 0, 0, 1, 0.157, -0.188, 0.001)
+transform = Transform3D(0.987982, 0.154572, 0, -0.154572, 0.987982, 0, 0, 0, 1, 0.157, -0.188, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="LowLeg_l" type="RigidBody3D" parent="Leg_l"]
-transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.376, -0.243, -0.001)
+transform = Transform3D(0.902179, -0.431362, 0, 0.431362, 0.902179, 0, 0, 0, 1, 0.376, -0.243, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Foot_l" type="RigidBody3D" parent="Leg_l/LowLeg_l"]
-transform = Transform3D(0.999992, 0.00396195, 0, -0.00396195, 0.999992, 0, 0, 0, 1, -0.004, -0.334, 0.001)
+transform = Transform3D(0.999992, 0.00396195, 0, -0.00396195, 0.999992, 0, 0, 0, 1, -0.004, -0.334, 0)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -281,6 +289,7 @@ shape = SubResource("CapsuleShape3D_blcw0")
 [node name="LowLeg_l" type="Sprite3D" parent="Leg_l/LowLeg_l"]
 transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, -0.0038709, -0.00990683, 0)
 offset = Vector2(0.89, -14.165)
+render_priority = 1
 texture = ExtResource("9_lcis0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Leg_l"]
@@ -290,6 +299,7 @@ shape = SubResource("CapsuleShape3D_qt76e")
 [node name="Leg_l" type="Sprite3D" parent="Leg_l"]
 transform = Transform3D(1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0, 1, 0, 0, 0)
 offset = Vector2(17.47, -9.7)
+render_priority = 2
 texture = ExtResource("10_d2kcw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -352,7 +362,7 @@ node_b = NodePath("../../Body/Neck")
 solver_priority = 5
 
 [node name="Head" type="HingeJoint3D" parent="Joints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06344, 0.701181, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0639461, 0.707364, 0)
 node_a = NodePath("../../Body/Neck")
 node_b = NodePath("../../Body/Neck/Head")
 solver_priority = 5
