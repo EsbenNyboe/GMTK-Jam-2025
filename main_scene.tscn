@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=25 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="2_2c62f"]
@@ -9,8 +9,6 @@
 [ext_resource type="Script" uid="uid://banf7hpgb0mlm" path="res://sky_bg_parallax.gd" id="7_66tet"]
 [ext_resource type="Script" uid="uid://ci5hxnt6lexmq" path="res://hill_bg_parallax.gd" id="8_66tet"]
 [ext_resource type="Script" uid="uid://b8mufxodf6cb0" path="res://floor_bg_parallax.gd" id="9_7ycvg"]
-[ext_resource type="PackedScene" uid="uid://ccsuqmk2sqjdw" path="res://cloud_1.tscn" id="10_wr18j"]
-[ext_resource type="PackedScene" uid="uid://4nufg1p5te8r" path="res://root.tscn" id="12_671wp"]
 [ext_resource type="Script" uid="uid://d4bobav78w1wr" path="res://cloud_bg_parallax.gd" id="14_42l1d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3jxj"]
@@ -64,12 +62,10 @@ size = Vector3(10000, 1, 10000)
 [sub_resource type="QuadMesh" id="QuadMesh_hq1ik"]
 size = Vector2(1000, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_qwutr"]
-
 [node name="Main Scene" type="Node3D"]
 script = ExtResource("1_0f027")
 force_amount = 5.0
-jump_multiplier = 3.0
+jump_multiplier = 15.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2c62f")
@@ -156,6 +152,7 @@ mesh = SubResource("BoxMesh_o3jxj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SwingSeatJoint"]
 shape = SubResource("BoxShape3D_o3jxj")
+disabled = true
 
 [node name="PinJoint3D" type="PinJoint3D" parent="."]
 node_a = NodePath("../SwingMount")
@@ -273,30 +270,3 @@ height = 22.0
 distance = 48.0
 repeats = 20
 offset = 17.0
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0229, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-shape = SubResource("BoxShape3D_qwutr")
-
-[node name="Cloud1" parent="StaticBody3D2" instance=ExtResource("10_wr18j")]
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2862, 1.51153, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
-shape = SubResource("BoxShape3D_qwutr")
-
-[node name="Cloud1" parent="StaticBody3D3" instance=ExtResource("10_wr18j")]
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8769, 3.30769, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
-shape = SubResource("BoxShape3D_qwutr")
-
-[node name="Cloud1" parent="StaticBody3D4" instance=ExtResource("10_wr18j")]
-
-[node name="root" parent="." instance=ExtResource("12_671wp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.61826, 1.00229, 0)
