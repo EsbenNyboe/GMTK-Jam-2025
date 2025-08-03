@@ -1,11 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=31 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
-[ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="2_2c62f"]
 [ext_resource type="Script" uid="uid://bds4a85aygnu1" path="res://camera_controller.gd" id="2_d5x1h"]
 [ext_resource type="Script" uid="uid://ds6lj78yruhrw" path="res://rope_controller.gd" id="3_8mm7a"]
 [ext_resource type="Texture2D" uid="uid://b1kxfihw7a8v5" path="res://Textures/IMG20250731195538-removebg-preview.png" id="3_gyfs4"]
-[ext_resource type="PackedScene" uid="uid://bqve3xt2er15" path="res://player_ragdoll.tscn" id="5_wr18j"]
 [ext_resource type="Script" uid="uid://banf7hpgb0mlm" path="res://sky_bg_parallax.gd" id="7_66tet"]
 [ext_resource type="Script" uid="uid://ci5hxnt6lexmq" path="res://hill_bg_parallax.gd" id="8_66tet"]
 [ext_resource type="Script" uid="uid://b8mufxodf6cb0" path="res://floor_bg_parallax.gd" id="9_7ycvg"]
@@ -42,16 +40,6 @@ material = SubResource("StandardMaterial3D_8mm7a")
 [sub_resource type="BoxMesh" id="BoxMesh_o3jxj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o3jxj"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c62f"]
-transparency = 2
-alpha_scissor_threshold = 0.699
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("2_2c62f")
-
-[sub_resource type="QuadMesh" id="QuadMesh_d5x1h"]
-material = SubResource("StandardMaterial3D_2c62f")
-size = Vector2(2, 2.65)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wr18j"]
 
@@ -148,36 +136,6 @@ skeleton = NodePath("../..")
 
 [node name="SittingPlayer" type="Node3D" parent="SwingMount/SwingSeat"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SwingMount/SwingSeat/SittingPlayer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6433, 0)
-visible = false
-mesh = SubResource("QuadMesh_d5x1h")
-
-[node name="Hip" parent="SwingMount/SwingSeat/SittingPlayer" instance=ExtResource("5_wr18j")]
-visible = false
-script = null
-
-[node name="Arm_r" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body" index="0"]
-transform = Transform3D(-0.897112, -0.441804, 0, 0.441804, -0.897112, 0, 0, 0, 1, -0.273565, 0.54919, 0)
-
-[node name="LowArm_r" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_r" index="0"]
-transform = Transform3D(0.975284, 0.220953, 0, -0.220953, 0.975284, 0, 0, 0, 1, 0.331376, 0.184353, 0)
-
-[node name="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_r" index="1"]
-transform = Transform3D(0.585315, 0.675459, 0.448511, -0.806343, 0.542888, 0.2347, -0.0849607, -0.499027, 0.862412, 0.129239, 0.0744854, 0.0237045)
-
-[node name="Arm_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body" index="1"]
-transform = Transform3D(-0.942631, 0.333841, 0, -0.333841, -0.942631, 0, 0, 0, 1, 0.251444, 0.519103, 0)
-
-[node name="LowArm_l" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_l" index="0"]
-transform = Transform3D(0.999987, -0.00509658, 0, 0.00509658, 0.999987, 0, 0, 0, 1, -0.370601, 0.166252, 0)
-
-[node name="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Arm_l" index="1"]
-transform = Transform3D(-0.301422, 0.941845, -0.148571, -0.833275, -0.33594, -0.439085, -0.463461, -0.00854975, 0.886076, -0.190554, 0.0586775, -0.0169145)
-
-[node name="Head" parent="SwingMount/SwingSeat/SittingPlayer/Hip/Body/Neck" index="0"]
-transform = Transform3D(0.999827, 0.0185168, 0, -0.0185168, 0.999827, 0, 0, 0, 1, 0.0208526, 0.123791, 0)
-
 [node name="SeatStaticBody" type="StaticBody3D" parent="SwingMount/SwingSeat/SittingPlayer"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SwingMount/SwingSeat/SittingPlayer/SeatStaticBody"]
@@ -206,16 +164,13 @@ disabled = true
 
 [node name="SeatJoint" type="PinJoint3D" parent="SwingMount/SwingSeat/SittingPlayer"]
 node_a = NodePath("../SeatStaticBody")
-node_b = NodePath("../Hip")
 
 [node name="HandJoint_r" type="PinJoint3D" parent="SwingMount/SwingSeat/SittingPlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.404206, 0.894152, 0)
-node_a = NodePath("../Hip/Body/Arm_r/LowArm_r/Hand_r")
 node_b = NodePath("../HandMountStaticBody_r")
 
 [node name="HandJoint_l" type="PinJoint3D" parent="SwingMount/SwingSeat/SittingPlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.455496, 0.925065, 0)
-node_a = NodePath("../Hip/Body/Arm_l/LowArm_l/Hand_l")
 node_b = NodePath("../HandMountStaticBody_l")
 
 [node name="Swing_AnimatedSprite3D" parent="SwingMount/SwingSeat/SittingPlayer" instance=ExtResource("18_7th4q")]
@@ -224,6 +179,8 @@ frame = 4
 frame_progress = 0.603085
 
 [node name="SwingSeatJoint" type="RigidBody3D" parent="."]
+axis_lock_linear_z = true
+axis_lock_angular_z = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SwingSeatJoint"]
 visible = false
@@ -395,5 +352,3 @@ bus = &"Player"
 [node name="Impact_Audio" type="AudioStreamPlayer" parent="JumpSounds"]
 stream = ExtResource("18_6jybn")
 bus = &"SFX"
-
-[editable path="SwingMount/SwingSeat/SittingPlayer/Hip"]

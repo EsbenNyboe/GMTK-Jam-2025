@@ -33,6 +33,8 @@ var start_screen : Node
 
 var jump_length: float
 
+var timer: float
+
 func _ready() -> void:
 	instance = self
 	start_height = swing_seat.position.y + 0.1
@@ -65,9 +67,11 @@ func _process(delta: float) -> void:
 		is_jumping = true
 
 func _physics_process(delta: float) -> void:
+	timer += delta
+	timer = clampf(timer, 0, 10)
 	time_since_last_burst += delta
 	if time_since_last_burst < burst_duration:
-		swing_mount.apply_torque(Vector3.BACK * torque_amount)
+		swing_mount.apply_torque(Vector3.BACK * torque_amount * timer)
 	
 	if Input.is_action_just_pressed("swing"):
 		time_since_last_burst = 0
