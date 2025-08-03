@@ -22,11 +22,12 @@ func _process(delta: float) -> void:
 	if above_top_point && on_left_side && has_passed_bottom_point && !has_passed_top_point:
 		has_passed_top_point = true
 		has_passed_bottom_point = false
-		var clamped_velocity = clampf(MainScene.instance.swing_mount.angular_velocity.z, 0, max_velocity)	
-		var pitch = remap(clamped_velocity, 0, max_velocity, 1, 2)
-		#wee_audio.pitch_scale = pitch
+		var velocity = MainScene.instance.swing_mount.angular_velocity.z
+		var clamped_velocity = clampf(velocity, 0, max_velocity)	
+		var pitch = remap(clamped_velocity, 0, max_velocity, 0.5, 2)
+		wee_audio.pitch_scale = pitch
 		wee_audio.play()
-		print("yo")
+		print("yo: ", velocity)
 	
 	if below_bottom_point:
 		if !has_passed_bottom_point && has_passed_top_point:

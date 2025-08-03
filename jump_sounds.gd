@@ -8,15 +8,22 @@ extends Node
 var has_jumped: bool = false
 var has_landed: bool = false
 
-func _process(delta: float) -> void:
+var wind_tween: Tween
+
+func _process(delta: float) -> void:	
 	if !has_jumped && JumpingPlayer.instance:
 		has_jumped = true
 		yell_audio.play()
-		wind_audio.volume_linear = 1
+		wind_tween = create_tween()
+		wind_tween.tween_interval(1)
+		wind_tween.tween_callback(wind_audio.play)
 	
 	if !has_landed && has_jumped && PlayerRagdoll.instance:
 		has_landed = true
 		yell_audio.stop()
+		if wind_tween:
+			wind_tween.stop()
+		wind_audio.stop()
+		wind_audio.volume_linear = 0
 		grunt_audio.play()
 		impact_audio.play()
-		wind_audio.volume_linear = 0
