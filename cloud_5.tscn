@@ -13,4 +13,5 @@ material = SubResource("StandardMaterial3D_m35m6")
 
 [node name="Cloud5" type="MeshInstance3D"]
 transform = Transform3D(-4.37114e-08, -1.375, 0, 1, -6.01032e-08, 0, 0, 0, 1, 0, 0, 0)
+sorting_offset = -10.0
 mesh = SubResource("QuadMesh_u0ygc")
