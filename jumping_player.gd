@@ -13,12 +13,8 @@ func _ready() -> void:
 	instance = self
 
 func _process(delta: float) -> void:
-	if game_over:
-		MainScene.instance.set_score(PlayerRagdoll.instance.position.x)
-	
 	if position.y < -1 && !game_over:
 		game_over = true
-		print("jump length: ", position.x, " meters")
 		MainScene.instance.finish_game()
 		fly_animated_sprite_3d.queue_free()
 		var ragdoll_instance = PLAYER_RAGDOLL.instantiate()
