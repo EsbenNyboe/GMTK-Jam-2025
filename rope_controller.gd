@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var rope_visual: MeshInstance3D
+@export var rope_visual: Node3D
 @export var rope_joint: Node3D
 
 func _physics_process(delta: float) -> void:
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	basis.z = forward
 
 	# Apply transform
-	var thickness = 0.02
+	var thickness = 0.02 * 1.65
 	var mid_point = start + direction * 0.5
 	rope_visual.global_transform = Transform3D(basis, mid_point)
-	rope_visual.scale = Vector3(thickness, length, thickness)
+	rope_visual.scale = Vector3(thickness, length * 1.63, thickness)
