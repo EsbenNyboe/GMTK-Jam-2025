@@ -31,6 +31,7 @@ const MUTE_BUTTON = preload("res://mute_button.tscn")
 var is_jumping: bool = false
 var jumping_player_instance: Node3D
 var start_screen : Node
+var mute_button: Node
 
 var jump_length: float
 
@@ -42,7 +43,8 @@ func _ready() -> void:
 	
 	start_screen = START_SCREEN.instantiate()
 	add_child(start_screen)
-	add_child(MUTE_BUTTON.instantiate())
+	mute_button = MUTE_BUTTON.instantiate()
+	add_child(mute_button)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") && start_screen:
@@ -96,4 +98,9 @@ func set_score(score: float) -> void:
 func finish_game() -> void:
 	var tween = create_tween()
 	tween.tween_interval(1)
-	tween.tween_callback(add_child.bind(END_SCREEN.instantiate()))
+	tween.tween_callback(spawn_end_screen)
+
+func spawn_end_screen() -> void:
+	add_child(END_SCREEN.instantiate())
+	mute_button.queue_free()
+	add_child(MUTE_BUTTON.instantiate())
