@@ -26,6 +26,7 @@ var time_since_last_swing: float = 0
 @onready var camera_controller: CameraController = $Camera3D
 const START_SCREEN = preload("res://start_screen.tscn")
 const END_SCREEN = preload("res://end_screen.tscn")
+const MUTE_BUTTON = preload("res://mute_button.tscn")
 
 var is_jumping: bool = false
 var jumping_player_instance: Node3D
@@ -41,6 +42,7 @@ func _ready() -> void:
 	
 	start_screen = START_SCREEN.instantiate()
 	add_child(start_screen)
+	add_child(MUTE_BUTTON.instantiate())
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") && start_screen:
