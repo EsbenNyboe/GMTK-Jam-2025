@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=38 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Script" uid="uid://bds4a85aygnu1" path="res://camera_controller.gd" id="2_d5x1h"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://d4ejkciw4w6kg" path="res://Audio/audio_wind.tres" id="17_6jybn"]
 [ext_resource type="AudioStream" uid="uid://p4wgqbav40ya" path="res://Audio/audio_impact_splat.tres" id="18_6jybn"]
 [ext_resource type="PackedScene" uid="uid://drob45nvt01gq" path="res://swing_animated_sprite_3d.tscn" id="18_7th4q"]
+[ext_resource type="Texture2D" uid="uid://by46kldcry401" path="res://Textures/Swing.png" id="22_vimvf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3jxj"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -66,6 +67,15 @@ size = Vector3(10000, 10, 10000)
 [sub_resource type="QuadMesh" id="QuadMesh_hq1ik"]
 size = Vector2(1000, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vimvf"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("22_vimvf")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ghshe"]
+material = SubResource("StandardMaterial3D_vimvf")
+
 [node name="Main Scene" type="Node3D"]
 script = ExtResource("1_0f027")
 force_amount = 5.0
@@ -79,7 +89,7 @@ transform = Transform3D(0.919299, 0.340834, -0.196779, 0, 0.499998, 0.866027, 0.
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04, 4.661)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04, 5.251)
 script = ExtResource("2_d5x1h")
 lerp_factor_start = 0.001
 lerp_factor_end = 0.001
@@ -200,6 +210,7 @@ node_b = NodePath("../SwingSeatJoint")
 
 [node name="SandboxMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-07, -10, 0, 10, -4.37114e-07, 0, 0, 0, 10, -1.063, 0, -0.199351)
+visible = false
 mesh = SubResource("QuadMesh_8mm7a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -1197,3 +1208,7 @@ bus = &"Player"
 [node name="Impact_Audio" type="AudioStreamPlayer" parent="JumpSounds"]
 stream = ExtResource("18_6jybn")
 bus = &"SFX"
+
+[node name="SandboxMesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 7.45396, 0, 0, 0, 10, -0.414441, -0.779409, -0.199351)
+mesh = SubResource("QuadMesh_ghshe")
