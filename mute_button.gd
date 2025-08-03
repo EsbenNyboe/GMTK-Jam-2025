@@ -10,6 +10,7 @@ var master_bus_index = AudioServer.get_bus_index("Master")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	button.pressed.connect(on_pressed)
+	muted = AudioServer.is_bus_mute(master_bus_index)
 	speaker_on.visible = !muted
 	speaker_off.visible = muted
 
