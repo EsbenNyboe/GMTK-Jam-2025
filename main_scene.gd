@@ -13,6 +13,8 @@ static var instance
 
 @export var jump_multiplier: float = 1.5
 
+@export var score_multiplier: float = 0.5
+
 const JUMPING_PLAYER = preload("res://jumping_player.tscn")
 
 var time_since_last_burst: float = 100000
@@ -83,7 +85,7 @@ func _physics_process(delta: float) -> void:
 		is_above_start_height = false
 
 func set_score(score: float) -> void:
-	jump_length = score
+	jump_length = score * score_multiplier
 
 func finish_game() -> void:
 	var tween = create_tween()
