@@ -1,9 +1,10 @@
-[gd_scene load_steps=40 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=41 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Script" uid="uid://bds4a85aygnu1" path="res://camera_controller.gd" id="2_d5x1h"]
 [ext_resource type="Script" uid="uid://ds6lj78yruhrw" path="res://rope_controller.gd" id="3_8mm7a"]
 [ext_resource type="Texture2D" uid="uid://b1kxfihw7a8v5" path="res://Textures/IMG20250731195538-removebg-preview.png" id="3_gyfs4"]
+[ext_resource type="Texture2D" uid="uid://b6evucsa5i6ef" path="res://Textures/Swingseat.png" id="5_5smuj"]
 [ext_resource type="Texture2D" uid="uid://c55ky12p1tkgc" path="res://Textures/BG/Bush01.png" id="6_7th4q"]
 [ext_resource type="Texture2D" uid="uid://ba6lgthwagak2" path="res://Textures/BG/Bush02.png" id="7_6jybn"]
 [ext_resource type="Script" uid="uid://banf7hpgb0mlm" path="res://sky_bg_parallax.gd" id="7_66tet"]
@@ -151,26 +152,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.516008, -0.065419, 0.01846
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322112, 0.138156, 0.0184699)
 
 [node name="RopeBottom1Sprite" type="Sprite3D" parent="SwingMount/SwingSeat"]
-transform = Transform3D(0.04, 0, 0, 0, 0.657, 0, 0, 0, 1.012, -0.515294, -0.313694, 0.0184699)
+transform = Transform3D(0.0394856, -0.151451, 0, 0.00640588, 0.933538, 0, 0, 0, 1.012, -0.472411, -0.39027, 0.0184699)
 render_priority = 1
 texture = SubResource("GradientTexture2D_5smuj")
-
-[node name="RopeBottom1" type="MeshInstance3D" parent="SwingMount/SwingSeat"]
-transform = Transform3D(0.02, 0, 0, 0, 0.635, 0, 0, 0, 0.02, -0.391278, 0.240718, 0.0184699)
-visible = false
-mesh = SubResource("BoxMesh_hq1ik")
-skeleton = NodePath("../..")
 
 [node name="RopeBottom2Sprite" type="Sprite3D" parent="SwingMount/SwingSeat"]
-transform = Transform3D(0.03, 0, 0, 0, 0.692, 0, 0, 0, 0.75, 0.318374, -0.110409, 0.0188393)
+transform = Transform3D(0.0275537, -0.0856414, 0, 0.00624841, 0.377654, 0, 0, 0, 0.75, 0.348899, -0.00684273, 0.0188393)
 render_priority = 1
 texture = SubResource("GradientTexture2D_5smuj")
-
-[node name="RopeBottom2" type="MeshInstance3D" parent="SwingMount/SwingSeat"]
-transform = Transform3D(0.02, 0, 0, 0, 0.63, 0, 0, 0, 0.02, 0.208722, 0.299921, 0.0184699)
-visible = false
-mesh = SubResource("BoxMesh_hq1ik")
-skeleton = NodePath("../..")
 
 [node name="SittingPlayer" type="Node3D" parent="SwingMount/SwingSeat"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.170085, 0, 0)
@@ -216,6 +205,11 @@ node_b = NodePath("../HandMountStaticBody_l")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105599, 0.27781, 0)
 frame = 4
 frame_progress = 0.603085
+
+[node name="SeatSprite" type="Sprite3D" parent="SwingMount/SwingSeat"]
+transform = Transform3D(0.287338, 0.0392021, 0, -0.0392021, 0.287338, 0, 0, 0, 0.29, 0, -0.440002, 0)
+render_priority = -1
+texture = ExtResource("5_5smuj")
 
 [node name="SwingSeatJoint" type="RigidBody3D" parent="."]
 axis_lock_linear_z = true
