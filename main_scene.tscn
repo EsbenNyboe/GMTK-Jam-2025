@@ -1,12 +1,16 @@
-[gd_scene load_steps=31 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=35 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Script" uid="uid://bds4a85aygnu1" path="res://camera_controller.gd" id="2_d5x1h"]
 [ext_resource type="Script" uid="uid://ds6lj78yruhrw" path="res://rope_controller.gd" id="3_8mm7a"]
 [ext_resource type="Texture2D" uid="uid://b1kxfihw7a8v5" path="res://Textures/IMG20250731195538-removebg-preview.png" id="3_gyfs4"]
+[ext_resource type="Texture2D" uid="uid://c55ky12p1tkgc" path="res://Textures/BG/Bush01.png" id="6_7th4q"]
+[ext_resource type="Texture2D" uid="uid://ba6lgthwagak2" path="res://Textures/BG/Bush02.png" id="7_6jybn"]
 [ext_resource type="Script" uid="uid://banf7hpgb0mlm" path="res://sky_bg_parallax.gd" id="7_66tet"]
 [ext_resource type="Script" uid="uid://ci5hxnt6lexmq" path="res://hill_bg_parallax.gd" id="8_66tet"]
+[ext_resource type="Texture2D" uid="uid://cd268hj5ny3pb" path="res://Textures/BG/Bush03.png" id="8_ak604"]
 [ext_resource type="Script" uid="uid://b8mufxodf6cb0" path="res://floor_bg_parallax.gd" id="9_7ycvg"]
+[ext_resource type="Texture2D" uid="uid://betoempwl63sv" path="res://Textures/BG/Bush04.png" id="9_vimvf"]
 [ext_resource type="Script" uid="uid://b6l1aheeeouep" path="res://swing_sounds.gd" id="11_mo76n"]
 [ext_resource type="AudioStream" uid="uid://d8ok6fgt3isb" path="res://Audio/audio_wee.tres" id="12_mo76n"]
 [ext_resource type="AudioStream" uid="uid://67eibyowv3ol" path="res://Audio/audio_woosh.tres" id="13_mo76n"]
@@ -213,6 +217,846 @@ mesh = SubResource("QuadMesh_hq1ik")
 
 [node name="Background Elements" type="Node" parent="."]
 
+[node name="AllBushes" type="Node3D" parent="Background Elements"]
+
+[node name="Bush01" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, 11.2468, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush02" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, 22.592, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush03" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, 36.061, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, 148.698, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, 160.043, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, 173.512, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush04" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 49.0995, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush05" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 61.3869, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush06" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, 63.5502, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, 113.829, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 126.867, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 139.155, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, 141.318, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="BushGroup" type="Node3D" parent="Background Elements/AllBushes"]
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup2" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.762, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup2"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup2"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup2"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup2"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup2"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup02" type="Node3D" parent="Background Elements/AllBushes"]
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup02"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup02"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup03" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.383, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup03"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup03"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush14" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, 257.172, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush15" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, 268.517, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush16" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, 281.986, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush17" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, 394.623, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush18" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, 405.968, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush19" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, 419.437, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush20" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 295.025, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush21" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 307.312, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush22" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, 309.475, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush23" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, 359.754, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush24" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 372.792, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush25" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 385.08, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush26" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, 387.243, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="BushGroup3" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 245.925, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup3"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup3"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup3"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup3"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup3"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup4" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 349.687, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup4"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup4"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup4"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup4"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup4"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup04" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 245.925, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup04"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup04"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup05" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 393.308, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup05"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup05"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush27" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, 503.042, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush28" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, 514.388, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush29" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, 527.857, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush30" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, 640.493, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush31" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, 651.838, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush32" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, 665.307, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush33" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 540.895, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush34" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 553.182, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush35" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, 555.346, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush36" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, 605.624, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush37" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 618.663, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush38" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 630.95, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush39" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, 633.114, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="BushGroup5" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 491.796, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup5"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup5"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup5"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup5"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup5"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup6" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 595.558, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup6"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup6"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup6"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup6"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup6"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup06" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 491.796, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup06"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup06"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup07" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 639.179, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup07"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup07"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush40" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, 748.11, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush41" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, 759.455, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush42" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, 772.924, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush43" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, 885.56, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush44" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, 896.906, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush45" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, 910.375, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush46" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 785.962, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush47" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 798.25, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush48" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, 800.413, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush49" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, 850.692, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush50" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 863.73, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush51" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, 876.018, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush52" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, 878.181, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="BushGroup7" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 736.863, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup7"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup7"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup7"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup7"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup7"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup8" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 840.625, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup8"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup8"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup8"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup8"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup8"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup08" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 736.863, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup08"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup08"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup09" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 884.246, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup09"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup09"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush53" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, -219.336, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush54" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, -207.991, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush55" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, -194.522, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush56" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, -81.885, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush57" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, -70.5398, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush58" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, -57.0708, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush59" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, -181.483, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush60" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, -169.196, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush61" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, -167.032, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush62" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, -116.754, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush63" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, -103.715, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush64" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, -91.4278, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush65" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, -89.2646, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="BushGroup9" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -230.583, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup9"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup9"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup9"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup9"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup9"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup10" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.82, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup10"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup10"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup10"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup10"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup10"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup11" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -230.583, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup11"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup11"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup12" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.1993, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup12"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup12"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush66" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, -458.983, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush67" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, -447.638, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush68" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, -434.169, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush69" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, -321.533, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush70" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, -310.187, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush71" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, -296.718, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush72" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, -421.131, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush73" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, -408.843, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush74" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, -406.68, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush75" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, -356.401, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush76" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, -343.363, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush77" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, -331.075, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush78" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, -328.912, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="BushGroup13" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -470.23, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup13"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup13"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup13"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup13"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup13"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup14" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -366.468, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup14"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup14"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup14"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup14"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup14"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup15" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -470.23, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup15"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup15"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup16" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -322.847, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup16"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup16"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush79" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, -687.538, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush80" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, -676.192, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush81" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, -662.723, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush82" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.526714, -0.036945, 0, 0.0495202, 0.39296, 0, 0, 0, 1, -550.087, -0.12, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush83" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.277702, -0.0209901, 0, 0.0261087, 0.223258, 0, 0, 0, 1, -538.742, -0.12, 0.2)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush84" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, -525.273, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush85" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, -649.685, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush86" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, -637.397, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush87" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, -635.234, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush88" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.393433, -0.0417178, 0, 0.0369895, 0.443726, 0, 0, 0, 1, -584.956, 0, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush89" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, -571.917, 0, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="Bush90" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(0.167388, -0.014891, 0, 0.0157374, 0.158386, 0, 0, 0, 0.999999, -559.63, 0, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush91" type="Sprite3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(-0.258517, 0.030725, 0, -0.0333232, -0.23836, 0, 0, 0, 1, -557.466, -0.161567, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="BushGroup17" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -698.784, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup17"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup17"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup17"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup17"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup17"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup18" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -595.022, 0, 0)
+
+[node name="Bush09" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup18"]
+transform = Transform3D(0.192026, -0.0115501, 0, 0.0135659, 0.163493, 0, 0, 0, 1, 86.4295, -0.0653775, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush12" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup18"]
+transform = Transform3D(0.257393, -0.0554704, 0, 0.0808793, 0.176531, 0, 0, 0, 1.34607, 90.1586, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush13" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup18"]
+transform = Transform3D(0.0431555, 0.212385, 0, -0.0955299, 0.0959448, 0, 0, 0, 1.34607, 88.5117, 0.186697, 0)
+texture = ExtResource("7_6jybn")
+
+[node name="Bush10" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup18"]
+transform = Transform3D(-0.155006, -0.00753472, 0, 0.00888059, -0.131514, 0, 0, 0, 0.999998, 87.9422, -0.0653775, 0)
+texture = ExtResource("6_7th4q")
+
+[node name="Bush11" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup18"]
+transform = Transform3D(-0.119075, 0.0355752, 0, -0.0395994, -0.106974, 0, 0, 0, 0.999998, 88.5553, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup19" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -698.784, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup19"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup19"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
+[node name="BushGroup20" type="Node3D" parent="Background Elements/AllBushes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -551.401, 0, 0)
+
+[node name="Bush07" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup20"]
+transform = Transform3D(0.326602, -0.00144422, 0.00506971, 0.00152116, 0.320168, -0.0296995, -0.00161132, 0.00952046, 0.999546, 73.6726, 0.94158, 0)
+texture = ExtResource("8_ak604")
+
+[node name="Bush08" type="Sprite3D" parent="Background Elements/AllBushes/BushGroup20"]
+transform = Transform3D(0.0987623, -0.00750167, 0, 0.00697715, 0.106187, 0, 0, 0, 1, 72.8006, -0.0653775, 0)
+texture = ExtResource("9_vimvf")
+
 [node name="SkyBackground" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
 script = ExtResource("7_66tet")
@@ -222,10 +1066,10 @@ mesh_distance = 100.0
 
 [node name="FloorBackground" type="Node3D" parent="."]
 script = ExtResource("9_7ycvg")
-ring_count = 40
+ring_count = 80
 mesh_scale = 15.0
-mesh_distance = 0.5
-floor_height = -9.5
+mesh_distance = 0.2
+floor_height = -7.5
 
 [node name="HillBackground1" type="Node3D" parent="."]
 script = ExtResource("8_66tet")
@@ -240,8 +1084,8 @@ offset = 5.5
 [node name="HillBackground2" type="Node3D" parent="."]
 script = ExtResource("8_66tet")
 element_index = 2
-mesh_scale = 50.0
-height = -20.0
+mesh_scale = 70.0
+height = -40.0
 distance = 20.0
 spacing = 50.0
 repeats = 10
