@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=35 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="2_2c62f"]
@@ -64,6 +64,9 @@ albedo_texture = ExtResource("3_gyfs4")
 [sub_resource type="QuadMesh" id="QuadMesh_8mm7a"]
 material = SubResource("StandardMaterial3D_d5x1h")
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6jybn"]
+friction = 0.05
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5x1h"]
 size = Vector3(10000, 10, 10000)
 
@@ -73,7 +76,7 @@ size = Vector2(1000, 1)
 [node name="Main Scene" type="Node3D"]
 script = ExtResource("1_0f027")
 force_amount = 5.0
-jump_multiplier = 5.0
+jump_multiplier = 30.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2c62f")
@@ -239,6 +242,7 @@ mesh = SubResource("QuadMesh_8mm7a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5952, -0.396854)
+physics_material_override = SubResource("PhysicsMaterial_6jybn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 0)
