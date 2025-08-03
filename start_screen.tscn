@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxfffahhqh57n"]
+[gd_scene load_steps=2 format=3 uid="uid://cxfffahhqh57n"]
 
-[sub_resource type="Gradient" id="Gradient_3iaq5"]
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_my301"]
-gradient = SubResource("Gradient_3iaq5")
+[ext_resource type="Texture2D" uid="uid://36cmj2736fyg" path="res://Textures/IMG20250803103516-removebg-preview.png" id="1_ncxyx"]
 
 [node name="StartScreen" type="ColorRect"]
 anchors_preset = 15
@@ -12,7 +8,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.231373)
+color = Color(1, 1, 1, 0.423529)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -22,11 +18,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+[node name="TextureRect" type="ColorRect" parent="CenterContainer"]
 layout_mode = 2
-texture = SubResource("GradientTexture1D_my301")
 
 [node name="Message4" type="RichTextLabel" parent="CenterContainer/TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -43,3 +39,7 @@ bbcode_enabled = true
 text = "[center] Press [b]SPACE[/b] to make it swing![/center]
 
 [center] Press [b]X[/b] to jump![/center]"
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer/TextureRect"]
+rotation = -1.5708
+texture = ExtResource("1_ncxyx")
