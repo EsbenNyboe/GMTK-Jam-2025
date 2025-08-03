@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=35 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Texture2D" uid="uid://b0imw3n7w0sdn" path="res://Textures/IMG20250731194402-removebg-preview.png" id="2_2c62f"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://d4bobav78w1wr" path="res://cloud_bg_parallax.gd" id="14_42l1d"]
 [ext_resource type="Script" uid="uid://dte6sohf07q8u" path="res://jump_sounds.gd" id="14_m35m6"]
 [ext_resource type="AudioStream" uid="uid://btnx2b16tqvj4" path="res://Audio/audio_grunts.tres" id="16_m35m6"]
+[ext_resource type="AudioStream" uid="uid://cl04o36ef0krf" path="res://Audio/Atmos/WindLoop.wav" id="17_6jybn"]
 [ext_resource type="AudioStream" uid="uid://p4wgqbav40ya" path="res://Audio/audio_impact_splat.tres" id="18_6jybn"]
 [ext_resource type="PackedScene" uid="uid://drob45nvt01gq" path="res://swing_animated_sprite_3d.tscn" id="18_7th4q"]
 
@@ -63,6 +64,9 @@ albedo_texture = ExtResource("3_gyfs4")
 [sub_resource type="QuadMesh" id="QuadMesh_8mm7a"]
 material = SubResource("StandardMaterial3D_d5x1h")
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6jybn"]
+friction = 0.05
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5x1h"]
 size = Vector3(10000, 10, 10000)
 
@@ -72,7 +76,7 @@ size = Vector2(1000, 1)
 [node name="Main Scene" type="Node3D"]
 script = ExtResource("1_0f027")
 force_amount = 5.0
-jump_multiplier = 3.5
+jump_multiplier = 30.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2c62f")
@@ -238,6 +242,7 @@ mesh = SubResource("QuadMesh_8mm7a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5952, -0.396854)
+physics_material_override = SubResource("PhysicsMaterial_6jybn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 0)
@@ -375,6 +380,12 @@ script = ExtResource("14_m35m6")
 
 [node name="Yell_Audio" type="AudioStreamPlayer" parent="JumpSounds"]
 stream = ExtResource("14_2jcla")
+bus = &"Player"
+
+[node name="Wind_Audio" type="AudioStreamPlayer" parent="JumpSounds"]
+stream = ExtResource("17_6jybn")
+volume_db = -80.0
+autoplay = true
 bus = &"Player"
 
 [node name="Grunt_Audio" type="AudioStreamPlayer" parent="JumpSounds"]
