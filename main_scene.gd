@@ -10,10 +10,10 @@ static var instance
 @onready var swing_seat: RigidBody3D = $SwingSeatJoint
 
 @export var burst_duration: float = 0.2
-
 @export var jump_multiplier: float = 1.5
-
 @export var score_multiplier: float = 0.5
+
+@export_range(0, 1) var timer_impact_factor: float = 1
 
 const JUMPING_PLAYER = preload("res://jumping_player.tscn")
 
@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 	timer = clampf(timer, 0, 10)
 	time_since_last_burst += delta
 	if time_since_last_burst < burst_duration:
-		swing_mount.apply_torque(Vector3.BACK * torque_amount * timer)
+		swing_mount.apply_torque(Vector3.BACK * torque_amount + Vector3.BACK * torque_amount * timer * timer_impact_factor)
 	
 	if Input.is_action_just_pressed("swing"):
 		time_since_last_burst = 0
