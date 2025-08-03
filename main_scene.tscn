@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bb8hsk8n2c5ow"]
+[gd_scene load_steps=34 format=3 uid="uid://bb8hsk8n2c5ow"]
 
 [ext_resource type="Script" uid="uid://t0ims8gfpvy7" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="Script" uid="uid://bds4a85aygnu1" path="res://camera_controller.gd" id="2_d5x1h"]
@@ -17,6 +17,9 @@
 [ext_resource type="AudioStream" uid="uid://d4ejkciw4w6kg" path="res://Audio/audio_wind.tres" id="17_6jybn"]
 [ext_resource type="AudioStream" uid="uid://p4wgqbav40ya" path="res://Audio/audio_impact_splat.tres" id="18_6jybn"]
 [ext_resource type="PackedScene" uid="uid://drob45nvt01gq" path="res://swing_animated_sprite_3d.tscn" id="18_7th4q"]
+[ext_resource type="Texture2D" uid="uid://c80tcvj7go684" path="res://Textures/speaker-off (1).png" id="18_84odl"]
+[ext_resource type="Script" uid="uid://dbg0m1w4k4tac" path="res://mute_button.gd" id="18_ak604"]
+[ext_resource type="Texture2D" uid="uid://dc2pp4decxwyw" path="res://Textures/speaker.png" id="19_ak604"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3jxj"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -353,3 +356,37 @@ bus = &"Player"
 [node name="Impact_Audio" type="AudioStreamPlayer" parent="JumpSounds"]
 stream = ExtResource("18_6jybn")
 bus = &"SFX"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(1, 1, 1, 0)
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 29.0
+offset_bottom = 29.0
+focus_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text_direction = 3
+script = ExtResource("18_ak604")
+
+[node name="SpeakerOff" type="Sprite2D" parent="ColorRect/Button"]
+position = Vector2(13.22, 12.22)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("18_84odl")
+
+[node name="SpeakerOn" type="Sprite2D" parent="ColorRect/Button"]
+position = Vector2(13.22, 12.22)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("19_ak604")
