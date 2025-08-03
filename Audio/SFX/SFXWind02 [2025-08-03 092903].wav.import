@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dq1afawmeibkh"
+path="res://.godot/imported/SFXWind02 [2025-08-03 092903].wav-cae4922586a2da6466862c1ef3330938.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/SFXWind02 [2025-08-03 092903].wav"
+dest_files=["res://.godot/imported/SFXWind02 [2025-08-03 092903].wav-cae4922586a2da6466862c1ef3330938.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
